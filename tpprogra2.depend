@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1666129233 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
+	"lista.h"
+
+1666130200 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1666130200 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
