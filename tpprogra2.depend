@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1666129233 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
+1666130220 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
 	"lista.h"
 
-1666130200 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.h
+1666132709 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

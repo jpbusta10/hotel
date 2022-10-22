@@ -5,5 +5,6 @@ int main()
 {
     nodoLista*lista=inicListaCliente();
     cliente nuevo;
+    nuevo = cargaCliente();
     return 0;
 }
