@@ -18,5 +18,9 @@ typedef struct
     struct nodoArbol*izquierda;
     struct nodoArbol*derecha;
 } nodoArbol;
+///prototipado
 
+nodoArbol*inicArbol();
+nodoArbol*crearNodoArbol(int dato);
+nodoArbol*cargaArbol(nodoArbol*arbol,int numeroHabitacion);
 #endif // ARBOLHABITACIONES_H_INCLUDED
