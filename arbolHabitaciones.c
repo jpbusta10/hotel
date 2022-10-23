@@ -18,6 +18,7 @@ nodoArbol*crearNodoArbol(int dato)
 nodoArbol*cargaArbol(nodoArbol*arbol,int numeroHabitacion)
 {
     nodoArbol*nuevoNodo=crearNodoArbol(numeroHabitacion);
+    printf("hola\n");
     if(arbol==NULL)
     {
         arbol=nuevoNodo;
@@ -35,3 +36,13 @@ nodoArbol*cargaArbol(nodoArbol*arbol,int numeroHabitacion)
     }
     return arbol;
 }
+void muestraPreorder(nodoArbol*arbol)
+{
+    if(arbol!=NULL)
+    {
+        printf("habitacion: %i\n",arbol->numeroHabitacion);
+        muestraPreorder(arbol->izquierda);
+        muestraPreorder(arbol->derecha);
+    }
+}
+

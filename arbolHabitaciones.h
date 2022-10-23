@@ -23,4 +23,5 @@ typedef struct
 nodoArbol*inicArbol();
 nodoArbol*crearNodoArbol(int dato);
 nodoArbol*cargaArbol(nodoArbol*arbol,int numeroHabitacion);
+void muestraPreorder(nodoArbol*arbol);
 #endif // ARBOLHABITACIONES_H_INCLUDED
