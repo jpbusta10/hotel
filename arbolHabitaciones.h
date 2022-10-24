@@ -24,4 +24,8 @@ nodoArbol*inicArbol();
 nodoArbol*crearNodoArbol(int dato);
 nodoArbol*cargaArbol(nodoArbol*arbol,int numeroHabitacion);
 void muestraPreorder(nodoArbol*arbol);
+void inOrder(nodoArbol*arbol);
+nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones);
+
+
 #endif // ARBOLHABITACIONES_H_INCLUDED

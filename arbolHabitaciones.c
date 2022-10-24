@@ -45,4 +45,31 @@ void muestraPreorder(nodoArbol*arbol)
         muestraPreorder(arbol->derecha);
     }
 }
+void inOrder(nodoArbol*arbol)
+{
+    if(arbol!=NULL)
+    {
+        inOrder(arbol->izquierda);
+        printf("[%i]",arbol->numeroHabitacion);
+        inOrder(arbol->derecha);
+    }
+}
+nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones)///carga la habitaciones
+{
+    int primerElemento=cantidadHabitaciones/2;
+    arbol=cargaArbol(arbol,primerElemento);
+    for(int i=0;i<=cantidadHabitaciones;i++)
+    {
+        if(i!=primerElemento)
+        {
+            arbol=cargaArbol(arbol,i);
+        }
+    }
+    return arbol;
+}
+
+
+
+
+
 

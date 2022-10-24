@@ -5,10 +5,8 @@
 int main()
 {
     nodoArbol*arbol=inicArbol();
-    int habitacion=200;
-    arbol=cargaArbol(arbol,habitacion);
-    habitacion=50;
-    arbol=cargaArbol(arbol,habitacion);
-    muestraPreorder(arbol);
+    int habitacion=111;
+    arbol=habitaciones(arbol,habitacion);
+    inOrder(arbol);
     return 0;
 }
