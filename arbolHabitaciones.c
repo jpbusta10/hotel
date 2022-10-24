@@ -67,6 +67,17 @@ nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones)///carga la habi
     }
     return arbol;
 }
+nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion)
+{
+    nodoArbol*rta=NULL;
+    if (arbol!=NULL)
+    {
+        if(habitacion==arbol->numeroHabitacion)
+        {
+            rta=arbol;
+        }
+    }
+}
 
 
 

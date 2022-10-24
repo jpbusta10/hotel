@@ -5,8 +5,10 @@
 int main()
 {
     nodoArbol*arbol=inicArbol();
-    int habitacion=111;
-    arbol=habitaciones(arbol,habitacion);
+    int habitacionesHotel=300;
+    arbol=habitaciones(arbol,habitacionesHotel);
     inOrder(arbol);
+
+
     return 0;
 }
