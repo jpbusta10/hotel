@@ -7,16 +7,16 @@
 	<stdlib.h>
 	<string.h>
 
-1666616793 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
+1666620685 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 	"arbolHabitaciones.h"
 
-1666617087 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.c
+1666620707 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1666616072 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.h
+1666620685 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"

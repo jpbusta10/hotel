@@ -8,6 +8,8 @@ int main()
     int habitacionesHotel=300;
     arbol=habitaciones(arbol,habitacionesHotel);
     inOrder(arbol);
+    nodoArbol*buscado=buscarPorHabitacion(arbol,40);
+    printf("se encontro la habitacion %i\n",buscado->numeroHabitacion);
 
 
     return 0;

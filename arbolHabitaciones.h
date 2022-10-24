@@ -26,6 +26,6 @@ nodoArbol*cargaArbol(nodoArbol*arbol,int numeroHabitacion);
 void muestraPreorder(nodoArbol*arbol);
 void inOrder(nodoArbol*arbol);
 nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones);
-
+nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion);
 
 #endif // ARBOLHABITACIONES_H_INCLUDED

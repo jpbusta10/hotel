@@ -76,8 +76,22 @@ nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion)
         {
             rta=arbol;
         }
+        else
+        {
+            if(habitacion>arbol->numeroHabitacion)
+            {
+                rta=buscarPorHabitacion(arbol->derecha,habitacion);
+            }
+            else
+            {
+                rta=buscarPorHabitacion(arbol->izquierda,habitacion);
+            }
+        }
+
     }
+    return rta;
 }
+
 
 
 
