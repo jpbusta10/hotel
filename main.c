@@ -4,12 +4,11 @@
 #include "arbolHabitaciones.h"
 int main()
 {
-    nodoArbol*arbol;
-    nodoArbol*inicArbol();
+    nodoArbol*arbol=inicArbol();
     int habitacion=200;
     arbol=cargaArbol(arbol,habitacion);
     habitacion=50;
-    //arbol=cargaArbol(arbol,habitacion);
+    arbol=cargaArbol(arbol,habitacion);
     muestraPreorder(arbol);
     return 0;
 }
