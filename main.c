@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "lista.h"
 #include "arbolHabitaciones.h"
+#include "hoteleria.h"
 int main()
 {
     nodoArbol*arbol=inicArbol();
@@ -9,7 +10,6 @@ int main()
     arbol=habitaciones(arbol,habitacionesHotel);
     inOrder(arbol);
     nodoArbol*buscado=buscarPorHabitacion(arbol,40);
-    printf("se encontro la habitacion %i\n",buscado->numeroHabitacion);
 
 
     return 0;

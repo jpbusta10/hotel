@@ -54,7 +54,7 @@ void inOrder(nodoArbol*arbol)
         inOrder(arbol->derecha);
     }
 }
-nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones)///carga la habitaciones
+nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones)///carga las habitaciones dependiendo de cuantas queramos
 {
     int primerElemento=cantidadHabitaciones/2;
     arbol=cargaArbol(arbol,primerElemento);
