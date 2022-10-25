@@ -13,6 +13,8 @@ nodoArbol*crearNodoArbol(int dato)
     nuevoNodo->estado.Listacliente=inicListaCliente();
     nuevoNodo->estado.estadoLimpieza=0;
     nuevoNodo->estado.condicion=0;
+    nuevoNodo->estado.capacidad=rand()%6;///generamos una capacidad de la habitacion de manera ramdom para simplificar las operaciones
+
     return nuevoNodo;
 }
 
@@ -91,7 +93,17 @@ nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion)
     }
     return rta;
 }
-
+nodoArbol*buscarPorCapacidad(nodoArbol*arbol,int totalHabitaciones,int capacidad)///devuelve la primer habitacion libre y limpia con esa capacidad
+{
+    nodoArbol*rta=NULL;
+    int i=0;
+    while((i<=totalHabitaciones)&&(rta->estado.condicion!=1)&&(rta->estado.estadoLimpieza!=1)&&((rta->estado.capacidad!=capacidad)||(rta->estado.capacidad>capacidad)))
+    {
+         rta=buscarPorHabitacion(arbol,i);
+         i++;
+    }
+    return rta;
+}
 
 
 

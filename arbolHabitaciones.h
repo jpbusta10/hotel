@@ -6,8 +6,9 @@
 
 typedef struct
 {
-    int condicion;///1 esta vacia 0 esta llena
+    int condicion;///0 esta vacia
     int estadoLimpieza;//si es 0 esta limpio si es 1 es sucia
+    int capacidad;
     nodoLista*Listacliente;
 } habitacion;
 

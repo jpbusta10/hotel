@@ -17,6 +17,10 @@ nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
         scanf("%c",&continuar);
     }while(continuar=='s'||continuar=='S');
 
+    if(cantidadClientes<=5)
+    {
+
+    }
 
 
 }

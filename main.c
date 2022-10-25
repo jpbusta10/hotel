@@ -5,6 +5,7 @@
 #include "hoteleria.h"
 int main()
 {
+    srand(time(NULL));
     nodoArbol*arbol=inicArbol();
     int habitacionesHotel=300;
     arbol=habitaciones(arbol,habitacionesHotel);
