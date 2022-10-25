@@ -53,7 +53,6 @@ void inOrder(nodoArbol*arbol)
     {
         inOrder(arbol->izquierda);
         printf("[%i]",arbol->numeroHabitacion);
-        printf("cantidad %i",arbol->estado.capacidad);
         inOrder(arbol->derecha);
     }
 }
@@ -104,11 +103,9 @@ nodoArbol*buscarPorCapacidad(nodoArbol*arbol,int capacidad)///devuelve la primer
     }
     else
     {
-        printf("\nentra al else\n");
         rta=buscarPorCapacidad(arbol->izquierda,capacidad);
         if(rta==NULL)
         {
-            printf("\nbusca derecha\n");
             rta=buscarPorCapacidad(arbol->derecha,capacidad);
         }
     }

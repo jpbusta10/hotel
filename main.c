@@ -7,7 +7,7 @@ int main()
 {
     srand(time(NULL));
     nodoArbol*arbol=inicArbol();
-    int habitacionesHotel=300;
+    int habitacionesHotel=10;
     arbol=habitaciones(arbol,habitacionesHotel);
     inOrder(arbol);
     nodoArbol*buscado=buscarPorCapacidad(arbol,5);
