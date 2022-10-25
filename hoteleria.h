@@ -9,7 +9,7 @@
 
 
 ///prototipados
-
+void checkIn(nodoArbol*arbol);
 
 
 #endif // HOTELERIA_H_INCLUDED

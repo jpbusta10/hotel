@@ -1,11 +1,12 @@
 #include "hoteleria.h"
 
-nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
+void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
 {
     nodoLista*nuevosClientes=inicListaCliente();
     cliente nuevoCliente;
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
+    nodoArbol*habDesignada;
 
     do///cargamos la lista con los clientes
     {
@@ -19,8 +20,17 @@ nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
 
     if(cantidadClientes<=5)
     {
-
+         habDesignada=buscarPorCapacidad(arbol,cantidadClientes);
+         if(habDesignada!=NULL)
+         {
+             habDesignada->estado.condicion=1;
+             habDesignada->estado.Listacliente=nuevosClientes;
+             printf("\nqueda asignada la habitacion: [%i]\n",habDesignada->numeroHabitacion);
+         }
+         else
+         {
+             printf("\nno hay habitaciones disponibles\n");
+         }
     }
-
 
 }
