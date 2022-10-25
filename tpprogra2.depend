@@ -32,7 +32,7 @@
 1666623576 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666710399 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
+1666711136 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
 1666710292 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
@@ -58,7 +58,7 @@
 	<stdlib.h>
 	<string.h>
 
-1666710321 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1666711011 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"

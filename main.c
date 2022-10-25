@@ -10,7 +10,7 @@ int main()
     int habitacionesHotel=300;
     arbol=habitaciones(arbol,habitacionesHotel);
     inOrder(arbol);
-    nodoArbol*buscado=buscarPorCapacidad(arbol,4);
+    nodoArbol*buscado=buscarPorCapacidad(arbol,5);
     printf("\nhabitacion: %i , capacidad: %i \n",buscado->numeroHabitacion,buscado->estado.capacidad);
 
 
