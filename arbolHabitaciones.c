@@ -60,7 +60,7 @@ nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones)///carga las hab
 {
     int primerElemento=cantidadHabitaciones/2;
     arbol=cargaArbol(arbol,primerElemento);
-    for(int i=0;i<=cantidadHabitaciones;i++)
+    for(int i=0; i<=cantidadHabitaciones; i++)
     {
         if(i!=primerElemento)
         {
@@ -93,14 +93,23 @@ nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion)
     }
     return rta;
 }
-nodoArbol*buscarPorCapacidad(nodoArbol*arbol,int totalHabitaciones,int capacidad)///devuelve la primer habitacion libre y limpia con esa capacidad
+nodoArbol*buscarPorCapacidad(nodoArbol*arbol,int capacidad)///devuelve la primer habitacion libre y limpia con esa capacidad
 {
     nodoArbol*rta=NULL;
-    int i=0;
-    while((i<=totalHabitaciones)&&(rta->estado.condicion!=1)&&(rta->estado.estadoLimpieza!=1)&&((rta->estado.capacidad!=capacidad)||(rta->estado.capacidad>capacidad)))
+
+    if((arbol->estado.capacidad>=capacidad)&&(arbol->estado.condicion==0)&&(arbol->estado.estadoLimpieza==0))
     {
-         rta=buscarPorHabitacion(arbol,i);
-         i++;
+        rta=arbol;
+    }
+    else
+    {
+        printf("\nentra al else\n");
+        rta=buscarPorCapacidad(arbol->izquierda,capacidad);
+        if(rta==NULL)
+        {
+            printf("\nbusca derecha\n");
+            rta=buscarPorCapacidad(arbol->derecha,capacidad);
+        }
     }
     return rta;
 }
