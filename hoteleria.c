@@ -1,11 +1,13 @@
 #include "hoteleria.h"
 
-nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
+void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
 {
     nodoLista*nuevosClientes=inicListaCliente();
     cliente nuevoCliente;
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
+    int cantHabitaciones;
+    char auxiliar[50];
     nodoArbol*hab;
 
     do///cargamos la lista con los clientes
@@ -25,17 +27,14 @@ nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     while(cantHabitaciones!=0)
     {
         printf("\nprimer habitacion:\n");
-        printf("\nelija el huesped:\n");
         mostrarLista(nuevosClientes);
+        printf("\nelija el huesped:\n");
         gets(auxiliar);
         nodoLista*seguidora=nuevosClientes;
-        while(seguidora!=NULL)
+       /* while(seguidora!=NULL)
         {
 
-        }
+        }*/
 
-
-
-
-
+    }
     }

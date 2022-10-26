@@ -45,20 +45,20 @@
 	<stdlib.h>
 	<string.h>
 
-1666707642 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
+1666793498 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
 1666708013 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666707642 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
+1666793498 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1666712342 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1666793498 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
