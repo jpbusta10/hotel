@@ -7,6 +7,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
     int cantHabitaciones;
+    int huespedesEnHabitacion;
     char auxiliar[50];
     nodoArbol*hab;
 
@@ -24,17 +25,33 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     printf("\ncuantas habitaciones desea?\n");
     scanf("%i",&cantHabitaciones);
 
-    while(cantHabitaciones!=0)
+    for(int i=0;i<cantHabitaciones;i++)///iteramos hasta que se tengan todas las habitaciones requeridas
     {
-        printf("\nprimer habitacion:\n");
-        mostrarLista(nuevosClientes);
-        printf("\nelija el huesped:\n");
-        gets(auxiliar);
-        nodoLista*seguidora=nuevosClientes;
-       /* while(seguidora!=NULL)
+        printf("\nhabitacion: %i\n",i+1);
+        printf("cuantos huespedes en la habitacion?\n");
+        scanf("%i",&huespedesEnHabitacion);
+        nodoLista*clientesHabitacion=inicListaCliente();
+        nodoLista*buscado=NULL;
+        for(int i=0; i<huespedesEnHabitacion; i++)
         {
+            buscado=NULL;
+            while(buscado==NULL)
+            {
+                printf("\ningrese el nombre del huesped de estos.\n");
+                mostrarLista(nuevosClientes);
+                fflush(stdin);
+                gets(auxiliar);
+                buscado=buscarNodo(nuevosClientes,auxiliar);
+            }
+            clientesHabitacion=agregarPrincipio(clientesHabitacion,buscado->miCliente);
+            nuevosClientes=borrarNodo(nuevosClientes,buscado->miCliente.nombre);
+            hab=buscarPorCapacidad(arbol,huespedesEnHabitacion);
+            hab->estado.Listacliente=clientesHabitacion;
+            hab->estado.condicion=1;
+            mostrarNodoArbol(hab);
+        }
 
-        }*/
+
 
     }
-    }
+}
