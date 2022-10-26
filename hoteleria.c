@@ -6,6 +6,7 @@ nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     cliente nuevoCliente;
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
+    nodoArbol*hab;
 
     do///cargamos la lista con los clientes
     {
@@ -17,10 +18,9 @@ nodoArbol*checkIn(nodoArbol*arbol)///realizamos check in de habitacion
         scanf("%c",&continuar);
     }while(continuar=='s'||continuar=='S');
 
-    if(cantidadClientes<=5)
-    {
 
-    }
+
+
 
 
 }
