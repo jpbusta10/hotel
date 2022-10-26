@@ -50,7 +50,7 @@ void mostrarLista(nodoLista*lista)
 cliente cargaCliente()
 {
     cliente nuevoCliente;
-    printf("\ningrese el nombre del cliente\n");
+    printf("ingrese el nombre del cliente\n");
     fflush(stdin);
     gets(nuevoCliente.nombre);
     printf("ingrese el DNI\n");
