@@ -62,4 +62,52 @@ cliente cargaCliente()
     return nuevoCliente;
 }
 
+nodoLista*borrarNodo(nodoLista*lista,char nombre [50])
+{
+    nodoLista*aBorrar=NULL;
+    if(strcmp(lista->miCliente.nombre,nombre)==0)
+    {
+        aBorrar=lista;
+        lista=lista->siguiente;
+    }
+    else
+    {
+        nodoLista*seguidora=lista;
+        nodoLista*anterior=NULL;
+        while((seguidora!=NULL)&&(strcmp(seguidora->miCliente.nombre,nombre)!=0))
+        {
+            anterior=seguidora;
+            seguidora=seguidora->siguiente;
+        }
+        if(seguidora!=NULL)
+        {
+            anterior=seguidora->siguiente;
+            aBorrar=seguidora;
+            free(aBorrar);
+        }
+    }
+    return lista;
+}
+nodoLista*buscarNodo(nodoLista*lista,char nombre[50])
+{
+    nodoLista*buscado=NULL;///si es NULL no lo encuentra
+    if(strcmp(lista->miCliente.nombre,nombre)==0)
+    {
+        buscado=lista;
+    }
+    else
+    {
+        nodoLista*seguidora=lista;
+        while((lista!=NULL)&&(strcmp(lista->miCliente.nombre,nombre)!=0))
+        {
+            printf("entra al while\n");
+            seguidora=seguidora->siguiente;
+        }
+        if(seguidora!=NULL)
+        {
+            buscado=seguidora;
+        }
+    }
+    return buscado;
 
+}
