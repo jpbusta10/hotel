@@ -29,4 +29,5 @@ void inOrder(nodoArbol*arbol);
 nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones);
 nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion);
 nodoArbol*buscarPorCapacidad(nodoArbol*arbol,int capacidad);
+void mostrarNodoArbol(nodoArbol*aMostrar);
 #endif // ARBOLHABITACIONES_H_INCLUDED
