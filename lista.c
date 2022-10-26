@@ -81,7 +81,7 @@ nodoLista*borrarNodo(nodoLista*lista,char nombre [50])
         }
         if(seguidora!=NULL)
         {
-            anterior=seguidora->siguiente;
+            anterior->siguiente=seguidora->siguiente;
             aBorrar=seguidora;
             free(aBorrar);
         }
@@ -98,7 +98,7 @@ nodoLista*buscarNodo(nodoLista*lista,char nombre[50])
     else
     {
         nodoLista*seguidora=lista;
-        while((lista!=NULL)&&(strcmp(lista->miCliente.nombre,nombre)!=0))
+        while((seguidora!=NULL)&&(strcmp(seguidora->miCliente.nombre,nombre)!=0))
         {
             printf("entra al while\n");
             seguidora=seguidora->siguiente;
