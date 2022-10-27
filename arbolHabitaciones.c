@@ -96,24 +96,50 @@ nodoArbol*buscarPorHabitacion(nodoArbol*arbol,int habitacion)
 nodoArbol*buscarPorCapacidad(nodoArbol*arbol,int capacidad)///devuelve la primer habitacion libre y limpia con esa capacidad
 {
     nodoArbol*rta=NULL;
-    if(arbol!=NULL){
-    if((arbol->estado.capacidad>=capacidad)&&(arbol->estado.condicion==0)&&(arbol->estado.estadoLimpieza==0))
+    if(arbol!=NULL)
     {
-        rta=arbol;
-    }
-    else
-    {
-        rta=buscarPorCapacidad(arbol->izquierda,capacidad);
-        if(rta==NULL)
+        if((arbol->estado.capacidad>=capacidad)&&(arbol->estado.condicion==0)&&(arbol->estado.estadoLimpieza==0))
         {
-            rta=buscarPorCapacidad(arbol->derecha,capacidad);
+            rta=arbol;
         }
-    }
+        else
+        {
+            rta=buscarPorCapacidad(arbol->izquierda,capacidad);
+            if(rta==NULL)
+            {
+                rta=buscarPorCapacidad(arbol->derecha,capacidad);
+            }
+        }
     }
     return rta;
 }
 
+void mostrarNodoArbol(nodoArbol*aMostrar)
+{
+    printf("\nnumero habitacion: %i\n",aMostrar->numeroHabitacion);
+    if(aMostrar->estado.condicion==1)
+    {
+        printf("condicion: ocupada\n");
+    }
+    else
+    {
+        printf("condicion: desocupada\n");
+    }
+    if(aMostrar->estado.estadoLimpieza==0)
+    {
+        printf("limpia\n");
+    }
+    else
+    {
+        printf("sucia\n");
+    }
+    if(aMostrar->estado.Listacliente!=NULL)
+    {
+        printf("clientes:\n");
+        mostrarLista(aMostrar->estado.Listacliente);
+    }
 
+}
 
 
 

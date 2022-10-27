@@ -1,23 +1,23 @@
 # depslib dependency file v1.0
-1666724349 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
+1666826734 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
 	"lista.h"
 
-1666132709 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.h
+1666809535 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1666724320 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
+1666809535 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 	"arbolHabitaciones.h"
 	"hoteleria.h"
 
-1666723582 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.c
+1666809535 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1666723582 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.h
+1666809713 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -29,26 +29,26 @@
 	<stdlib.h>
 	<string.h>
 
-1666724298 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
+1666809535 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666711319 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
+1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1666710292 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
+1666870648 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 
-1666707642 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.h
+1666870767 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1666793498 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
+1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
-1666708013 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
 1666793498 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
@@ -58,7 +58,7 @@
 	<stdlib.h>
 	<string.h>
 
-1666793498 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"

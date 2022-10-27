@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#define CANT_MAX_HAB 5 ///cantidad maxima de personas por habitacion
 typedef struct
 {
     char nombre[50];
-    char DNI[7];
+    char DNI[10];
     char ciudadOrigen[50];
 }cliente;
 
@@ -24,4 +24,6 @@ nodoLista*agregarPrincipio(nodoLista*lista,cliente nuevoCliente);
 void mostrarNodo(nodoLista*aMostrar);
 void mostrarLista(nodoLista*lista);
 cliente cargaCliente();
+nodoLista*borrarNodo(nodoLista*lista,char nombre [50]);
+nodoLista*buscarNodo(nodoLista*lista,char nombre[50]);
 #endif // LISTA_H_INCLUDED
