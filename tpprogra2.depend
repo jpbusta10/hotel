@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1666826734 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
+1666828444 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.c
 	"lista.h"
 
 1666809535 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\lista.h
@@ -29,7 +29,7 @@
 	<stdlib.h>
 	<string.h>
 
-1666809535 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
+1666828444 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
 1666798595 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
