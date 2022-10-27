@@ -6,8 +6,8 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     cliente nuevoCliente;
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
-    int cantHabitaciones;
-    int huespedesEnHabitacion;
+    int cantHabitaciones=0;
+    int huespedesEnHabitacion=0;
     char auxiliar[50];
     nodoArbol*hab;
 
@@ -23,8 +23,14 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     }
     while(continuar=='s'||continuar=='S');
     system("cls");
+
     printf("\ncuantas habitaciones desea?\n");
     scanf("%i",&cantHabitaciones);
+    if(cantHabitaciones>cantidadClientes)
+    {
+        printf("no puede elegir tantas habitaciones\n");
+    }
+
     system("cls");
     for(int i=0; i<cantHabitaciones; i++) ///iteramos hasta que se tengan todas las habitaciones requeridas
     {
@@ -52,6 +58,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
 
         }
         hab->estado.Listacliente=clientesHabitacion;///agrego la lista de clientes a la de la habitacion
+        persistenciaCliente(hab,clientesActuales);
         system("cls");
         mostrarNodoArbol(hab);
         system("pause");
@@ -62,6 +69,8 @@ void checkOut(nodoArbol*arbol)
 {
     int numeroHabitacion=0;
     nodoArbol*habitacion=NULL;
+    printf("habitaciones ocupada:\n");
+    muestraArbolOcupados(arbol);
     while(habitacion==NULL)
     {
         printf("A que habitacion desea realizarle el checkout?\n");
@@ -73,11 +82,11 @@ void checkOut(nodoArbol*arbol)
     {
         mostrarNodoArbol(habitacion);
         persistenciaCliente(habitacion,historial);
+        borrarDeHospedados(habitacion->numeroHabitacion);
         habitacion->estado.condicion=0;
         habitacion->estado.Listacliente=inicListaCliente();
         habitacion->estado.estadoLimpieza=1;
         mostrarNodoArbol(habitacion);
-        system("pause");
 
     }
     else
@@ -114,11 +123,87 @@ void muestraArcivo(char nombreArchivo[100])
     {
         while(fread(&aMostrar,sizeof(baseClientes),1,fp)>0)
         {
+            printf("-----------------------------------------\n");
             printf("NOMBRE: %s\n",aMostrar.nombre);
             printf("DNI: %s\n",aMostrar.dni);
             printf("CIUDAD ORIGEN: %s\n",aMostrar.ciudadOrigen);
             printf("HABITACION: %i\n",aMostrar.habitacion);
         }
         fclose(fp);
+    }
+}
+nodoArbol*despersistenciaClientesActuales(nodoArbol*arbol)
+{
+    baseClientes base;
+    cliente nuevoCliente;
+    nodoArbol*buscado;
+    FILE*fp;
+    fp=fopen(clientesActuales,"rb");
+    if(fp!=NULL)
+    {
+        while(fread(&base,sizeof(baseClientes),1,fp)>0)
+        {
+            buscado=buscarPorHabitacion(arbol,base.habitacion);
+            buscado->estado.condicion=1;
+            strcpy(nuevoCliente.nombre,base.nombre);
+            strcpy(nuevoCliente.DNI,base.dni);
+            strcpy(nuevoCliente.ciudadOrigen,base.ciudadOrigen);
+            buscado->estado.Listacliente=agregarPrincipio(buscado->estado.Listacliente,nuevoCliente);
+        }
+        fclose(fp);
+    }
+    return arbol;
+}
+nodoListaBase*inicListaBase()
+{
+    return NULL;
+}
+nodoListaBase*crearNodoBase(baseClientes dato)
+{
+    nodoListaBase*nuevoNodo=(nodoListaBase*)malloc(sizeof(nodoListaBase));
+    nuevoNodo->dato=dato;
+    nuevoNodo->siguiente=NULL;
+}
+nodoListaBase*agregarPrincipioBase(nodoListaBase*lista,baseClientes dato)
+{
+    nodoListaBase*nuevoNodo=crearNodoBase(dato);
+
+    if(lista==NULL)
+    {
+        lista=nuevoNodo;
+    }
+    else
+    {
+        nuevoNodo->siguiente=lista;
+        lista=nuevoNodo;
+    }
+    return lista;
+}
+nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion)
+{
+
+}
+void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuales
+{
+    FILE*fp;
+    nodoListaBase*lista=inicListaBase();
+    baseClientes cliente;
+    int validos=0;
+    fp=fopen(clientesActuales,"r+b");
+    if(fp!=NULL)
+    {
+        while(fread(&cliente,sizeof(baseClientes),1,fp)>0)
+        {
+            lista=agregarPrincipioBase(lista,cliente);
+        }
+
+    while(lista!=NULL)
+    {
+        cliente=lista->dato;
+        fwrite(&cliente,sizeof(baseClientes),1,fp);
+        lista=lista->siguiente;
+    }
+    fclose(fp);
+
     }
 }

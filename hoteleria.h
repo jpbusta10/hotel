@@ -14,6 +14,11 @@ typedef struct
     char ciudadOrigen[100];
     int habitacion;
 }baseClientes;
+typedef struct
+{
+    baseClientes dato;
+    struct nodoListaBase*siguiente;
+}nodoListaBase;
 
 
 
@@ -22,5 +27,5 @@ void checkIn(nodoArbol*arbol);
 void checkOut(nodoArbol*arbol);
 void persistenciaCliente(nodoArbol*nodo,char nombreArchivo[100]);
 void muestraArcivo(char nombreArchivo[100]);
-
+nodoArbol*despersistenciaClientesActuales(nodoArbol*arbol);
 #endif // HOTELERIA_H_INCLUDED

@@ -32,10 +32,10 @@
 1666809535 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666874501 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
+1666883710 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1666870648 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
+1666880876 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -48,20 +48,21 @@
 1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
-1666878164 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+1666886341 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666878028 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
+1666886084 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1666878028 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1666883764 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 	"arbolHabitaciones.h"
 	"hoteleria.h"
+	<stdbool.h>
 
