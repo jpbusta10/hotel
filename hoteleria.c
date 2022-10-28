@@ -209,7 +209,7 @@ nodoListaBase*borrarHabitacionLista(nodoListaBase*lista,int habitacion)
     {
         nodoListaBase*seguidora=lista->siguiente;
         nodoListaBase*anterior=lista;
-        while((seguidora!=NULL)&&(seguidora->dato.habitacion==habitacion))
+        while((seguidora!=NULL)&&(seguidora->dato.habitacion!=habitacion))
         {
             anterior=seguidora;
             seguidora=seguidora->siguiente;
@@ -238,10 +238,7 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
             lista=agregarPrincipioBase(lista,clienteArchivo);
             validos++;
         }
-        for(int i=0;i<validos;i++)
-        {
-            lista=borrarHabitacionLista(lista,habitacion);
-        }
+
         aIngresar=lista;
         fclose(fp);
 
