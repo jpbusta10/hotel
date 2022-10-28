@@ -28,4 +28,9 @@ void checkOut(nodoArbol*arbol);
 void persistenciaCliente(nodoArbol*nodo,char nombreArchivo[100]);
 void muestraArcivo(char nombreArchivo[100]);
 nodoArbol*despersistenciaClientesActuales(nodoArbol*arbol);
+nodoListaBase*inicListaBase();
+nodoListaBase*agregarPrincipioBase(nodoListaBase*lista,baseClientes dato);
+void mostrarListaBase(nodoListaBase*aMostrar);
+void mostrarListaBase(nodoListaBase*lista);
+void borrarDeHospedados(int habitacion);///borra del archivo de hospedadosActuales
 #endif // HOTELERIA_H_INCLUDED

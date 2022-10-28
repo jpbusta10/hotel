@@ -24,6 +24,7 @@ int main()
         printf("5.ver habitaciones sucias\n");
         printf("6.limpiar una habitacion\n");
         printf("7.buscar una habitacion\n");
+        printf("8.clietes hospedados archivo\n");///solo para prueba
         printf("9.salir\n");
         scanf("%i",&option);
         system("cls");
@@ -57,6 +58,12 @@ int main()
                 system("pause");
                 system("cls");
                 break;
+            case 8:
+                muestraArcivo(clientesActuales);
+                system("pause");
+                system("cls");
+                break;
+
             case 9:
 
                 seguir=false;

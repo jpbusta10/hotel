@@ -78,6 +78,7 @@ void checkOut(nodoArbol*arbol)
         habitacion=buscarPorHabitacion(arbol,numeroHabitacion);
     }
     system("cls");
+    //borrarDeHospedados(numeroHabitacion);
     if(habitacion->estado.condicion==1)
     {
         mostrarNodoArbol(habitacion);
@@ -179,31 +180,83 @@ nodoListaBase*agregarPrincipioBase(nodoListaBase*lista,baseClientes dato)
     }
     return lista;
 }
-nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion)
+void mostrarNodoBase(nodoListaBase*aMostrar)
 {
-
+    printf("NOMBRE: %s\n",aMostrar->dato.nombre);
+    printf("DNI: %s\n",aMostrar->dato.dni);
+    printf("CIUDAD ORIGEN: %s\n",aMostrar->dato.ciudadOrigen);
+    printf("HABITACION: %i\n",aMostrar->dato.habitacion);
+}
+void mostrarListaBase(nodoListaBase*lista)
+{
+    nodoListaBase*seguidora=lista;
+    while(seguidora!=NULL)
+    {
+        mostrarNodoBase(lista);
+        printf("\n");
+        seguidora=seguidora->siguiente;
+    }
+}
+nodoListaBase*borrarHabitacionLista(nodoListaBase*lista,int habitacion)
+{
+    nodoListaBase*aborrar;
+    if(lista->dato.habitacion==habitacion)
+    {
+        lista=aborrar;
+        lista=lista->siguiente;
+    }
+    else
+    {
+        nodoListaBase*seguidora=lista->siguiente;
+        nodoListaBase*anterior=lista;
+        while((seguidora!=NULL)&&(seguidora->dato.habitacion==habitacion))
+        {
+            anterior=seguidora;
+            seguidora=seguidora->siguiente;
+        }
+        if(seguidora!=NULL)
+        {
+            aborrar=seguidora;
+            anterior->siguiente=seguidora->siguiente;
+        }
+    }
+    free(aborrar);
+    return lista;
 }
 void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuales
 {
+    nodoListaBase*aIngresar;
     FILE*fp;
     nodoListaBase*lista=inicListaBase();
-    baseClientes cliente;
+    baseClientes clienteArchivo;
     int validos=0;
-    fp=fopen(clientesActuales,"r+b");
+    fp=fopen(clientesActuales,"rb");
     if(fp!=NULL)
     {
-        while(fread(&cliente,sizeof(baseClientes),1,fp)>0)
+        while(fread(&clienteArchivo,sizeof(nodoListaBase),1,fp)>0)
         {
-            lista=agregarPrincipioBase(lista,cliente);
+            lista=agregarPrincipioBase(lista,clienteArchivo);
+            validos++;
         }
+        for(int i=0;i<validos;i++)
+        {
+            lista=borrarHabitacionLista(lista,habitacion);
+        }
+        aIngresar=lista;
+        fclose(fp);
 
-    while(lista!=NULL)
+    }
+    FILE*eq;
+    eq=fopen(clientesActuales,"wb");
+    if(eq!=NULL)
     {
-        cliente=lista->dato;
-        fwrite(&cliente,sizeof(baseClientes),1,fp);
-        lista=lista->siguiente;
+        while(lista!=NULL)
+        {
+            clienteArchivo=aIngresar->dato;
+            fwrite(&clienteArchivo,sizeof(baseClientes),1,fp);
+            lista=lista->siguiente;
+        }
+        fclose(eq);
     }
-    fclose(fp);
 
-    }
 }
