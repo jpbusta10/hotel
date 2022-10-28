@@ -32,33 +32,33 @@
 1666828444 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666798595 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
+1666874501 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1666798303 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
+1666870648 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 
-1666799539 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.h
+1666870767 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1666799023 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
+1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
-1666799453 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+1666878164 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1666793498 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
+1666878028 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1666798450 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1666878028 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"

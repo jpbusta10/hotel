@@ -60,7 +60,7 @@ nodoArbol*habitaciones(nodoArbol*arbol,int cantidadHabitaciones)///carga las hab
 {
     int primerElemento=cantidadHabitaciones/2;
     arbol=cargaArbol(arbol,primerElemento);
-    for(int i=0; i<=cantidadHabitaciones; i++)
+    for(int i=1; i<=cantidadHabitaciones; i++)
     {
         if(i!=primerElemento)
         {
