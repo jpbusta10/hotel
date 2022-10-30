@@ -7,7 +7,7 @@
 	<stdlib.h>
 	<string.h>
 
-1666986777 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
+1666993037 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -15,26 +15,27 @@
 	"hoteleria.h"
 	<stdbool.h>
 
-1666915339 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.c
+1666992377 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1666985149 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.h
+1666992377 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 
-1666985252 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.h
+1666992377 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-<<<<<<< HEAD
-1666828444 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
-=======
-1666991043 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
->>>>>>> menu
+1666985252 D
+
+1666995646 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
+	"hoteleria.h"
+
+1666991043 u
 	"hoteleria.h"
 
 1666883710 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c

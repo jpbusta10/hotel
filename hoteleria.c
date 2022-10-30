@@ -233,13 +233,16 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
     fp=fopen(clientesActuales,"rb");
     if(fp!=NULL)
     {
-        while(fread(&clienteArchivo,sizeof(nodoListaBase),1,fp)>0)
+        while(fread(&clienteArchivo,sizeof(baseClientes),1,fp)>0)
         {
+            ///printf("cliente %i nombre: %s\n",validos,clienteArchivo.nombre);
             lista=agregarPrincipioBase(lista,clienteArchivo);
             validos++;
         }
 
         aIngresar=lista;
+        printf("LISTA SALIDA DEL ARCHIVO:\n");
+        mostrarListaBase(lista);
         fclose(fp);
 
     }
