@@ -235,14 +235,14 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
     {
         while(fread(&clienteArchivo,sizeof(baseClientes),1,fp)>0)
         {
-            ///printf("cliente %i nombre: %s\n",validos,clienteArchivo.nombre);
+            printf("cliente %i nombre: %s\n",validos,clienteArchivo.nombre);
             lista=agregarPrincipioBase(lista,clienteArchivo);
             validos++;
         }
 
-        aIngresar=lista;
         printf("LISTA SALIDA DEL ARCHIVO:\n");
         mostrarListaBase(lista);
+        borrarHabitacionLista(lista,habitacion);
         fclose(fp);
 
     }
@@ -252,8 +252,8 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
     {
         while(lista!=NULL)
         {
-            clienteArchivo=aIngresar->dato;
-            fwrite(&clienteArchivo,sizeof(baseClientes),1,fp);
+            clienteArchivo=lista->dato;
+            fwrite(&clienteArchivo,sizeof(baseClientes),1,eq);
             lista=lista->siguiente;
         }
         fclose(eq);
