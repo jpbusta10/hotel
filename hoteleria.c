@@ -78,7 +78,6 @@ void checkOut(nodoArbol*arbol)
         habitacion=buscarPorHabitacion(arbol,numeroHabitacion);
     }
     system("cls");
-    //borrarDeHospedados(numeroHabitacion);
     if(habitacion->estado.condicion==1)
     {
         mostrarNodoArbol(habitacion);
@@ -164,6 +163,7 @@ nodoListaBase*crearNodoBase(baseClientes dato)
     nodoListaBase*nuevoNodo=(nodoListaBase*)malloc(sizeof(nodoListaBase));
     nuevoNodo->dato=dato;
     nuevoNodo->siguiente=NULL;
+    return nuevoNodo;
 }
 nodoListaBase*agregarPrincipioBase(nodoListaBase*lista,baseClientes dato)
 {
@@ -197,35 +197,37 @@ void mostrarListaBase(nodoListaBase*lista)
         seguidora=seguidora->siguiente;
     }
 }
-nodoListaBase*borrarHabitacionLista(nodoListaBase*lista,int habitacion)
+
+nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion)
 {
-    nodoListaBase*aborrar;
+    nodoListaBase*aBorrar;
     if(lista->dato.habitacion==habitacion)
     {
-        lista=aborrar;
+        aBorrar=lista;
         lista=lista->siguiente;
+        free(aBorrar);
     }
-    else
+    nodoListaBase*seguidora=lista->siguiente;
+    nodoListaBase*anterior=lista;
+    if(seguidora!=NULL){
+    while(seguidora!=NULL)
     {
-        nodoListaBase*seguidora=lista->siguiente;
-        nodoListaBase*anterior=lista;
-        while((seguidora!=NULL)&&(seguidora->dato.habitacion!=habitacion))
+        if(seguidora->dato.habitacion==habitacion)
         {
-            anterior=seguidora;
-            seguidora=seguidora->siguiente;
-        }
-        if(seguidora!=NULL)
-        {
-            aborrar=seguidora;
+            aBorrar=seguidora;
             anterior->siguiente=seguidora->siguiente;
+            free(aBorrar);
         }
+        anterior=seguidora;
+        seguidora=seguidora->siguiente;
     }
-    free(aborrar);
+    }
+
     return lista;
 }
 void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuales
 {
-    nodoListaBase*aIngresar;
+    nodoListaBase*seguidora;
     FILE*fp;
     nodoListaBase*lista=inicListaBase();
     baseClientes clienteArchivo;
@@ -242,7 +244,8 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
 
         printf("LISTA SALIDA DEL ARCHIVO:\n");
         mostrarListaBase(lista);
-        borrarHabitacionLista(lista,habitacion);
+        lista=borrarNodoBase(lista,habitacion);
+
         fclose(fp);
 
     }
