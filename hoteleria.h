@@ -32,5 +32,6 @@ nodoListaBase*inicListaBase();
 nodoListaBase*agregarPrincipioBase(nodoListaBase*lista,baseClientes dato);
 void mostrarListaBase(nodoListaBase*aMostrar);
 void mostrarListaBase(nodoListaBase*lista);
+nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion);
 void borrarDeHospedados(int habitacion);///borra del archivo de hospedadosActuales
 #endif // HOTELERIA_H_INCLUDED

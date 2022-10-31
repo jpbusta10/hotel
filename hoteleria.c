@@ -192,7 +192,7 @@ void mostrarListaBase(nodoListaBase*lista)
     nodoListaBase*seguidora=lista;
     while(seguidora!=NULL)
     {
-        mostrarNodoBase(lista);
+        mostrarNodoBase(seguidora);
         printf("\n");
         seguidora=seguidora->siguiente;
     }
@@ -201,26 +201,37 @@ void mostrarListaBase(nodoListaBase*lista)
 nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion)
 {
     nodoListaBase*aBorrar;
+    int flag=0;
     if(lista->dato.habitacion==habitacion)
     {
+        printf("entra al primer if\n");
         aBorrar=lista;
         lista=lista->siguiente;
         free(aBorrar);
     }
-    nodoListaBase*seguidora=lista->siguiente;
-    nodoListaBase*anterior=lista;
-    if(seguidora!=NULL){
+    nodoListaBase*seguidora=lista;
+    nodoListaBase*anterior=NULL;
     while(seguidora!=NULL)
     {
+        printf("entra al while %s\n",seguidora->dato.nombre);
         if(seguidora->dato.habitacion==habitacion)
         {
+            printf("entra al segundo if %s\n",seguidora->dato.nombre);
             aBorrar=seguidora;
-            anterior->siguiente=seguidora->siguiente;
+            if(anterior!=NULL)
+                {
+                    anterior->siguiente=seguidora->siguiente;
+                }
+            flag=1;
+
             free(aBorrar);
         }
-        anterior=seguidora;
+        if(flag!=1)
+        {
+            anterior=seguidora;
+        }
         seguidora=seguidora->siguiente;
-    }
+        flag=0;
     }
 
     return lista;
