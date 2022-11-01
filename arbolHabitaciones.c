@@ -141,6 +141,18 @@ void mostrarNodoArbol(nodoArbol*aMostrar)
 
 }
 
+void muestraArbolOcupados(nodoArbol*arbol)
+{
+    if(arbol!=NULL)
+    {
+        if(arbol->estado.condicion==1)
+        {
+            mostrarNodoArbol(arbol);
+        }
+        muestraArbolOcupados(arbol->izquierda);
+        muestraArbolOcupados(arbol->derecha);
 
+    }
+}
 
 

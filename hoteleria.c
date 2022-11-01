@@ -6,8 +6,8 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     cliente nuevoCliente;
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
-    int cantHabitaciones;
-    int huespedesEnHabitacion;
+    int cantHabitaciones=0;
+    int huespedesEnHabitacion=0;
     char auxiliar[50];
     nodoArbol*hab;
 
@@ -23,8 +23,14 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     }
     while(continuar=='s'||continuar=='S');
     system("cls");
+
     printf("\ncuantas habitaciones desea?\n");
     scanf("%i",&cantHabitaciones);
+    if(cantHabitaciones>cantidadClientes)
+    {
+        printf("no puede elegir tantas habitaciones\n");
+    }
+
     system("cls");
     for(int i=0; i<cantHabitaciones; i++) ///iteramos hasta que se tengan todas las habitaciones requeridas
     {
@@ -52,6 +58,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
 
         }
         hab->estado.Listacliente=clientesHabitacion;///agrego la lista de clientes a la de la habitacion
+        persistenciaCliente(hab,clientesActuales);
         system("cls");
         mostrarNodoArbol(hab);
         system("pause");
@@ -62,6 +69,8 @@ void checkOut(nodoArbol*arbol)
 {
     int numeroHabitacion=0;
     nodoArbol*habitacion=NULL;
+    printf("habitaciones ocupada:\n");
+    muestraArbolOcupados(arbol);
     while(habitacion==NULL)
     {
         printf("A que habitacion desea realizarle el checkout?\n");
@@ -73,11 +82,11 @@ void checkOut(nodoArbol*arbol)
     {
         mostrarNodoArbol(habitacion);
         persistenciaCliente(habitacion,historial);
+        borrarDeHospedados(habitacion->numeroHabitacion);
         habitacion->estado.condicion=0;
         habitacion->estado.Listacliente=inicListaCliente();
         habitacion->estado.estadoLimpieza=1;
         mostrarNodoArbol(habitacion);
-        system("pause");
 
     }
     else
@@ -114,6 +123,7 @@ void muestraArcivo(char nombreArchivo[100])
     {
         while(fread(&aMostrar,sizeof(baseClientes),1,fp)>0)
         {
+            printf("-----------------------------------------\n");
             printf("NOMBRE: %s\n",aMostrar.nombre);
             printf("DNI: %s\n",aMostrar.dni);
             printf("CIUDAD ORIGEN: %s\n",aMostrar.ciudadOrigen);
@@ -121,4 +131,146 @@ void muestraArcivo(char nombreArchivo[100])
         }
         fclose(fp);
     }
+}
+nodoArbol*despersistenciaClientesActuales(nodoArbol*arbol)
+{
+    baseClientes base;
+    cliente nuevoCliente;
+    nodoArbol*buscado;
+    FILE*fp;
+    fp=fopen(clientesActuales,"rb");
+    if(fp!=NULL)
+    {
+        while(fread(&base,sizeof(baseClientes),1,fp)>0)
+        {
+            buscado=buscarPorHabitacion(arbol,base.habitacion);
+            buscado->estado.condicion=1;
+            strcpy(nuevoCliente.nombre,base.nombre);
+            strcpy(nuevoCliente.DNI,base.dni);
+            strcpy(nuevoCliente.ciudadOrigen,base.ciudadOrigen);
+            buscado->estado.Listacliente=agregarPrincipio(buscado->estado.Listacliente,nuevoCliente);
+        }
+        fclose(fp);
+    }
+    return arbol;
+}
+nodoListaBase*inicListaBase()
+{
+    return NULL;
+}
+nodoListaBase*crearNodoBase(baseClientes dato)
+{
+    nodoListaBase*nuevoNodo=(nodoListaBase*)malloc(sizeof(nodoListaBase));
+    nuevoNodo->dato=dato;
+    nuevoNodo->siguiente=NULL;
+    return nuevoNodo;
+}
+nodoListaBase*agregarPrincipioBase(nodoListaBase*lista,baseClientes dato)
+{
+    nodoListaBase*nuevoNodo=crearNodoBase(dato);
+
+    if(lista==NULL)
+    {
+        lista=nuevoNodo;
+    }
+    else
+    {
+        nuevoNodo->siguiente=lista;
+        lista=nuevoNodo;
+    }
+    return lista;
+}
+void mostrarNodoBase(nodoListaBase*aMostrar)
+{
+    printf("NOMBRE: %s\n",aMostrar->dato.nombre);
+    printf("DNI: %s\n",aMostrar->dato.dni);
+    printf("CIUDAD ORIGEN: %s\n",aMostrar->dato.ciudadOrigen);
+    printf("HABITACION: %i\n",aMostrar->dato.habitacion);
+}
+void mostrarListaBase(nodoListaBase*lista)
+{
+    nodoListaBase*seguidora=lista;
+    while(seguidora!=NULL)
+    {
+        mostrarNodoBase(seguidora);
+        printf("\n");
+        seguidora=seguidora->siguiente;
+    }
+}
+
+nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion)
+{
+    nodoListaBase*aBorrar;
+    int flag=0;
+    if(lista->dato.habitacion==habitacion)
+    {
+        printf("entra al primer if\n");
+        aBorrar=lista;
+        lista=lista->siguiente;
+        free(aBorrar);
+    }
+    nodoListaBase*seguidora=lista;
+    nodoListaBase*anterior=NULL;
+    while(seguidora!=NULL)
+    {
+        printf("entra al while %s\n",seguidora->dato.nombre);
+        if(seguidora->dato.habitacion==habitacion)
+        {
+            printf("entra al segundo if %s\n",seguidora->dato.nombre);
+            aBorrar=seguidora;
+            if(anterior!=NULL)
+                {
+                    anterior->siguiente=seguidora->siguiente;
+                }
+            flag=1;
+
+            free(aBorrar);
+        }
+        if(flag!=1)
+        {
+            anterior=seguidora;
+        }
+        seguidora=seguidora->siguiente;
+        flag=0;
+    }
+
+    return lista;
+}
+void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuales
+{
+    nodoListaBase*seguidora;
+    FILE*fp;
+    nodoListaBase*lista=inicListaBase();
+    baseClientes clienteArchivo;
+    int validos=0;
+    fp=fopen(clientesActuales,"rb");
+    if(fp!=NULL)
+    {
+        while(fread(&clienteArchivo,sizeof(baseClientes),1,fp)>0)
+        {
+            printf("cliente %i nombre: %s\n",validos,clienteArchivo.nombre);
+            lista=agregarPrincipioBase(lista,clienteArchivo);
+            validos++;
+        }
+
+        printf("LISTA SALIDA DEL ARCHIVO:\n");
+        mostrarListaBase(lista);
+        lista=borrarNodoBase(lista,habitacion);
+
+        fclose(fp);
+
+    }
+    FILE*eq;
+    eq=fopen(clientesActuales,"wb");
+    if(eq!=NULL)
+    {
+        while(lista!=NULL)
+        {
+            clienteArchivo=lista->dato;
+            fwrite(&clienteArchivo,sizeof(baseClientes),1,eq);
+            lista=lista->siguiente;
+        }
+        fclose(eq);
+    }
+
 }
