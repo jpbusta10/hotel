@@ -30,28 +30,37 @@
 	<stdlib.h>
 	<string.h>
 
-1666985252 D
+1666886084 D
 
 1667229303 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-<<<<<<< HEAD
-1667312173 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
+1667312250 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1667312173 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
-=======
-1666991043 u
-	"hoteleria.h"
-
-1666883710 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.c
-	"arbolHabitaciones.h"
-
-1666880876 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
->>>>>>> bdd6337cc0eb3a3648bcf24ad65c5ab5e27fe8e0
+1667312250 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
+
+1666991043 u
+	"hoteleria.h"
+
+1666883764 6337cc0eb3a3648bcf24ad65c5ab5e27fe8e0
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"arbolHabitaciones.h"
+	"lista.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"arbolHabitaciones.h"
+	"hoteleria.h"
+	<stdbool.h>
 
 1666870767 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.h
 	<stdio.h>
@@ -61,28 +70,17 @@
 1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
-<<<<<<< HEAD
-1667312173 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+1667312250 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
-1667312173 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
-=======
-1666886341 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
-	"hoteleria.h"
-
-1666886084 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
->>>>>>> bdd6337cc0eb3a3648bcf24ad65c5ab5e27fe8e0
+1667312250 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-<<<<<<< HEAD
-1667312173 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
-=======
-1666883764 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
->>>>>>> bdd6337cc0eb3a3648bcf24ad65c5ab5e27fe8e0
+1667312250 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
