@@ -70,10 +70,17 @@
 1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
+<<<<<<< HEAD
 1667312250 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
 1667312250 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
+=======
+1667315981 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+	"hoteleria.h"
+
+1667315534 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
+>>>>>>> f4c0e2716feb7244cb79fac347e0498af2792acc
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
