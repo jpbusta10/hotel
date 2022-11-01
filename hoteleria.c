@@ -197,43 +197,57 @@ void mostrarListaBase(nodoListaBase*lista)
         seguidora=seguidora->siguiente;
     }
 }
+int buscarNodoHabitacion(nodoListaBase*lista,int habitacion)
+{
+    int rta = 0;///si es 1 se encuentra el nodo
+    while((lista!=NULL)&&(lista->dato.habitacion!=habitacion))
+    {
+        printf("iteramos\n");
+        lista=lista->siguiente;
+    }
+    if(lista!=NULL)
+    {
+        printf("hay alguien de la hab\n");
+        rta=1;
+    }
+    return rta;
+}
 
 nodoListaBase*borrarNodoBase(nodoListaBase*lista,int habitacion)
 {
     nodoListaBase*aBorrar;
-    int flag=0;
     if(lista->dato.habitacion==habitacion)
     {
-        printf("entra al primer if\n");
         aBorrar=lista;
         lista=lista->siguiente;
-        free(aBorrar);
     }
-    nodoListaBase*seguidora=lista;
-    nodoListaBase*anterior=NULL;
-    while(seguidora!=NULL)
+    else
     {
-        printf("entra al while %s\n",seguidora->dato.nombre);
-        if(seguidora->dato.habitacion==habitacion)
-        {
-            printf("entra al segundo if %s\n",seguidora->dato.nombre);
-            aBorrar=seguidora;
-            if(anterior!=NULL)
-                {
-                    anterior->siguiente=seguidora->siguiente;
-                }
-            flag=1;
-
-            free(aBorrar);
-        }
-        if(flag!=1)
+        nodoListaBase*seguidora=lista->siguiente;
+        nodoListaBase*anterior=lista;
+        while((seguidora!=NULL)&&(seguidora->dato.habitacion!=habitacion))
         {
             anterior=seguidora;
+            seguidora=seguidora->siguiente;
         }
-        seguidora=seguidora->siguiente;
-        flag=0;
+        if(seguidora!=NULL)
+        {
+            anterior->siguiente=seguidora->siguiente;
+            aBorrar=seguidora;
+        }
     }
-
+    free(aBorrar);
+    return lista;
+}
+nodoListaBase*borramosListaHab(nodoListaBase*lista,int habitacion)
+{
+    printf("entramos en borramos\n");
+    int rta=buscarNodoHabitacion(lista,habitacion);
+    while(rta==1)
+    {
+        lista=borrarNodoBase(lista,habitacion);
+        rta=buscarNodoHabitacion(lista,habitacion);
+    }
     return lista;
 }
 void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuales
@@ -242,20 +256,19 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
     FILE*fp;
     nodoListaBase*lista=inicListaBase();
     baseClientes clienteArchivo;
-    int validos=0;
     fp=fopen(clientesActuales,"rb");
     if(fp!=NULL)
     {
         while(fread(&clienteArchivo,sizeof(baseClientes),1,fp)>0)
         {
-            printf("cliente %i nombre: %s\n",validos,clienteArchivo.nombre);
             lista=agregarPrincipioBase(lista,clienteArchivo);
-            validos++;
         }
 
         printf("LISTA SALIDA DEL ARCHIVO:\n");
         mostrarListaBase(lista);
-        lista=borrarNodoBase(lista,habitacion);
+        lista=borramosListaHab(lista,habitacion);
+        printf("LISTA DESPUES DE BORRAR: \n");
+        mostrarListaBase(lista);
 
         fclose(fp);
 
