@@ -70,7 +70,7 @@
 1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
-1667316609 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+1667316903 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 
 1667316609 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
@@ -87,7 +87,7 @@
 	<stdlib.h>
 	<string.h>
 
-1667312250 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1667317146 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"

@@ -63,8 +63,6 @@ int main()
                 seguir=false;
                 break;
 
-
-
         }
     }
 
