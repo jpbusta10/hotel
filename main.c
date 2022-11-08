@@ -3,9 +3,12 @@
 #include "lista.h"
 #include "arbolHabitaciones.h"
 #include "hoteleria.h"
+#include "filalimpieza.h"
 #include <stdbool.h>
 int main()
 {
+    FilaLimpieza filin;
+    inicFila(&filin);
     srand(time(NULL));
     bool seguir = true;
     nodoArbol*arbol=inicArbol();
@@ -15,7 +18,7 @@ int main()
     arbol=despersistenciaClientesActuales(arbol);
     int option=0;
     int aux=0;
-    while(seguir)
+    while(seguir==true)
     {
         printf("1.realizar un check In\n");
         printf("2.realizar un check Out\n");
@@ -23,7 +26,7 @@ int main()
         printf("4.mostrar base de clientes\n");
         printf("5.ver habitaciones sucias\n");
         printf("6.limpiar una habitacion\n");
-        printf("7.buscar una habitacion\n");
+        printf("7.archvo sucias\n");
         printf("9.salir\n");
         scanf("%i",&option);
         system("cls");
@@ -57,6 +60,13 @@ int main()
                 system("pause");
                 system("cls");
                 break;
+            case 7:
+                cargarFilaAuto(&filin);
+                persistenciaSucias(filin);
+                mostrarArchivoSucias();
+
+                levantarArchivo(&filin);
+                mostrarListaLimpieza(filin.cabecera);
 
             case 9:
 
