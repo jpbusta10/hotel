@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="arbolHabitaciones.h" />
+		<Unit filename="filalimpieza.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="filalimpieza.h" />
 		<Unit filename="hoteleria.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -48,6 +52,9 @@
 		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
