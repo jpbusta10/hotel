@@ -2,10 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-<<<<<<< HEAD
 	<File name="hoteleria.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="5972" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="lista.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="283" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="arbolHabitaciones.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -18,58 +22,19 @@
 			<Cursor1 position="465" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="arbolHabitaciones.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1480" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="main.c" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="881" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="lista.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="arbolHabitaciones.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="283" topLine="0" />
+			<Cursor1 position="1480" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="lista.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1395" topLine="57" />
-=======
-	<File name="hoteleria.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3291" topLine="243" />
-		</Cursor>
-	</File>
-	<File name="arbolHabitaciones.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="filalimpieza.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5009" topLine="155" />
-		</Cursor>
-		<Folding>
-			<Collapse line="48" />
-			<Collapse line="52" />
-		</Folding>
-	</File>
-	<File name="filalimpieza.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="554" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="lista.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="86" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="561" topLine="0" />
->>>>>>> 5ed711542c0af5ff48eab2d0ba4380de106b95be
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

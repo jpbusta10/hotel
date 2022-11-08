@@ -87,12 +87,13 @@
 	<stdlib.h>
 	<string.h>
 
-1667317146 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1667915991 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 	"arbolHabitaciones.h"
 	"hoteleria.h"
+	"filalimpieza.h"
 	<stdbool.h>
 
 1667844356 source:c:\users\admin\desktop\tp-progra2\arbolhabitaciones.c
@@ -134,6 +135,16 @@
 	"filalimpieza.h"
 
 1667885208 c:\users\admin\desktop\tp-progra2\filalimpieza.h
+	"arbolHabitaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+
+1667915991 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\filalimpieza.c
+	"filalimpieza.h"
+
+1667915991 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\filalimpieza.h
 	"arbolHabitaciones.h"
 	<stdio.h>
 	<stdlib.h>
