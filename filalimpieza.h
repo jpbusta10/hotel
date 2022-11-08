@@ -22,6 +22,12 @@ typedef struct{
     NodoLimpieza* ultimo;
 }FilaLimpieza;
 
+typedef struct{
+    char nombreEmpleado[20];
+    int bajaLogica;/// 0 =limpia 1= sucia;
+    int numeroHabitacion;
+}BaseDatosLimpieza;
+
 void muestraArbolSucias(nodoArbol*);
 void mostrarListaLimpieza(NodoLimpieza*);
 void mostrarNodoLimpieza(NodoLimpieza*);
@@ -34,10 +40,11 @@ void AgregarFila(FilaLimpieza*,Limpieza);
 void inicFila(FilaLimpieza*);
 nodoArbol* buscarSucia(nodoArbol*);
 void pasarArbolToFila(FilaLimpieza*,nodoArbol*);
-void persistenciaSucias(FilaLimpieza);
+void persistenciaSucias(BaseDatosLimpieza);
 void levantarArchivo(FilaLimpieza*);
 void limpiarHabitaciones(FilaLimpieza*,nodoArbol*);
 void mostrarArchivoSucias();
 NodoLimpieza* inicListaLimpieza();
 void cargarFilaAuto(FilaLimpieza* filin);
+char* empleadosLimpiezaRandom();
 #endif // FILALIMPIEZA_H_INCLUDED

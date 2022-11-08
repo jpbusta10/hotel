@@ -34,11 +34,12 @@ int main()
         {
             case 1:
                 checkIn(arbol);
+
                 system("pause");
                 system("cls");
                 break;
             case 2:
-                checkOut(arbol);
+                checkOut(arbol,&filin);
                 system("pause");
                 system("cls");
                 break;
@@ -62,12 +63,10 @@ int main()
                 break;
             case 7:
                 cargarFilaAuto(&filin);
-                persistenciaSucias(filin);
                 mostrarArchivoSucias();
-
-                levantarArchivo(&filin);
-                mostrarListaLimpieza(filin.cabecera);
-
+                system("pause");
+                system("cls");
+                break;
             case 9:
 
                 seguir=false;
