@@ -34,7 +34,6 @@ int main()
         {
             case 1:
                 checkIn(arbol);
-
                 system("pause");
                 system("cls");
                 break;

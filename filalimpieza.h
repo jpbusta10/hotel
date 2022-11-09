@@ -42,9 +42,9 @@ nodoArbol* buscarSucia(nodoArbol*);
 void pasarArbolToFila(FilaLimpieza*,nodoArbol*);
 void persistenciaSucias(BaseDatosLimpieza);
 void levantarArchivo(FilaLimpieza*);
-void limpiarHabitaciones(FilaLimpieza*,nodoArbol*);
+void limpiarHabitacion(FilaLimpieza*,nodoArbol*);
 void mostrarArchivoSucias();
 NodoLimpieza* inicListaLimpieza();
 void cargarFilaAuto(FilaLimpieza* filin);
-char* empleadosLimpiezaRandom();
+void empleadosLimpiezaRandom(char*);
 #endif // FILALIMPIEZA_H_INCLUDED
