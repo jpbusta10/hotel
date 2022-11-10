@@ -64,6 +64,24 @@ void AgregarFila(FilaLimpieza*filin,Limpieza dato){
         filin->cabecera=agregarFinalLimpieza(filin->cabecera,nuevo);
         filin->ultimo=nuevo;
     }
+    BaseDatosLimpieza aux;
+    aux.bajaLogica=1;
+    aux.numeroHabitacion=dato.numeroHabitacion;
+    char* aux2;
+    empleadosLimpiezaRandom(aux2);
+    strcpy(aux.nombreEmpleado,aux2);
+    persistenciaSucias(aux);
+}
+
+void empleadosLimpiezaRandom(char* aux){
+    int numero=rand()%3+1;
+    if(numero==1){
+        strcpy(aux,"Nelida");
+    }else if(numero==2){
+        strcpy(aux,"Patricia");
+    }else{
+       strcpy(aux,"Pedro");
+    }
 }
 
 NodoLimpieza* extraer(FilaLimpieza*filin){
@@ -131,61 +149,72 @@ void pasarArbolToFila(FilaLimpieza* fila,nodoArbol* arbol){
     }
 }
 
-void persistenciaSucias(FilaLimpieza filin){
+void persistenciaSucias(BaseDatosLimpieza dato){
     FILE* archi=fopen(archivolimpieza,"ab");
-    Limpieza cargador;
     if(archi!=NULL){
-        while(filin.cabecera!=NULL){
-            NodoLimpieza* aux=extraer(&filin);
-            if(aux!=NULL){
-                cargador.estadoHabitacion=aux->dato.estadoHabitacion;
-                cargador.numeroHabitacion=aux->dato.numeroHabitacion;
-                fwrite(&cargador,sizeof(Limpieza),1,archi);
-                puts("-----cargo-un-dato----\n");
+        fwrite(&dato,sizeof(BaseDatosLimpieza),1,archi);
+
+    }
+    fclose(archi);
+}
+
+void mostrarArchivoSucias(){
+    FILE* archi=fopen(archivolimpieza,"rb");
+    BaseDatosLimpieza aux;
+    if(archi!=NULL){
+        while(fread(&aux,sizeof(BaseDatosLimpieza),1,archi)>0){
+            if(aux.bajaLogica==1){
+                puts("------------\n");
+                printf("numero habitacion: %d\n",aux.numeroHabitacion);
+                printf("nombre empleado: %s\n",aux.nombreEmpleado);
+                puts("-----------\n");
             }
         }
     }
     fclose(archi);
 }
 
-
-void mostrarArchivoSucias(){
-    FILE* archi=fopen(archivolimpieza,"rb");
-    Limpieza aux;
-    if(archi!=NULL){
-        while(fread(&aux,sizeof(Limpieza),1,archi)>0){
-            puts("----MOSTRAR-ARCHIVO-------\n");
-            printf("numero habitacion: %d\n",aux.numeroHabitacion);
-            puts("-----------\n");
-        }
-    }
-    printf("salio del while");
-    fclose(archi);
-}
-
 void levantarArchivo(FilaLimpieza* filin){
     FILE* archi=fopen(archivolimpieza,"rb");
     if(archi!=NULL){
-        Limpieza aux;
-        while(fread(&aux,sizeof(Limpieza),1,archi)>0){
-            AgregarFila(filin,aux);
+        BaseDatosLimpieza aux;
+        Limpieza aux2;
+        while(fread(&aux,sizeof(BaseDatosLimpieza),1,archi)>0){
+            aux2.estadoHabitacion=aux.bajaLogica;
+            aux2.numeroHabitacion=aux.numeroHabitacion;
+            AgregarFila(filin,aux2);
         }
         fclose(archi);
     }
-    FILE* archi2=fopen(archivolimpieza,"wb");
-    fclose(archi2);
 }
 
-void limpiarHabitaciones(FilaLimpieza* filin,nodoArbol* arbol){
+void limpiarHabitacion(FilaLimpieza* filin,nodoArbol* arbol){
     NodoLimpieza* extraido;
     nodoArbol* comodin;
-    while(filin->cabecera!=NULL){
-        extraido=extraer(filin);
-        comodin=buscarPorHabitacion(arbol,extraido->dato.numeroHabitacion);
-        comodin->estado.estadoLimpieza=0;
+    BaseDatosLimpieza auxiliar;
+    int flag=0;
+    FILE* archi=fopen(archivolimpieza,"r+b");
+    if(archi!=NULL){
+        if(filin->cabecera!=NULL){
+            extraido=extraer(filin);
+            comodin=buscarPorHabitacion(arbol,extraido->dato.numeroHabitacion);
+            comodin->estado.estadoLimpieza=0;
+        }
+        while((fread(&auxiliar,sizeof(BaseDatosLimpieza),1,archi)>0)&&(flag==0)){
+            if(auxiliar.numeroHabitacion==extraido->dato.numeroHabitacion){
+                flag=1;
+            }
+        }
+        fseek(archi,-1,SEEK_CUR);
+        auxiliar.bajaLogica=0;
+        fwrite(&auxiliar,sizeof(BaseDatosLimpieza),1,archi);
+        fclose(archi);
     }
-
+    ///borrar habitacion de archivo
+    ///
 }
+
+
 
 void cargarFilaAuto(FilaLimpieza* filin){
     Limpieza aux;
@@ -195,9 +224,8 @@ void cargarFilaAuto(FilaLimpieza* filin){
         numerohabitacion=rand()%100+1;
         aux.estadoHabitacion=1;
         aux.numeroHabitacion=numerohabitacion;
-
+        puts("el problema es lo de abajo");
         AgregarFila(filin,aux);
-
         i++;
     }
 

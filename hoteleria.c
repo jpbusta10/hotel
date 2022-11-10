@@ -65,12 +65,14 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     }
 }
 
-void checkOut(nodoArbol*arbol)
+void checkOut(nodoArbol*arbol,FilaLimpieza* filin)
 {
     int numeroHabitacion=0;
     nodoArbol*habitacion=NULL;
     printf("habitaciones ocupada:\n");
     muestraArbolOcupados(arbol);
+    Limpieza dato;
+    inicFila(&filin);
     while(habitacion==NULL)
     {
         printf("A que habitacion desea realizarle el checkout?\n");
@@ -86,6 +88,9 @@ void checkOut(nodoArbol*arbol)
         habitacion->estado.condicion=0;
         habitacion->estado.Listacliente=inicListaCliente();
         habitacion->estado.estadoLimpieza=1;
+        dato.estadoHabitacion=1;
+        dato.numeroHabitacion=habitacion->numeroHabitacion;
+        AgregarFila(&filin,dato);
         mostrarNodoArbol(habitacion);
 
     }

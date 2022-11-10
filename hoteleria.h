@@ -7,6 +7,7 @@
 #include <string.h>
 #define historial "historialClientes.bin"
 #define clientesActuales "clienteshospedados.bin"
+#include "filalimpieza.h"
 typedef struct
 {
     char nombre[50];
@@ -24,7 +25,7 @@ typedef struct
 
 ///prototipados
 void checkIn(nodoArbol*arbol);
-void checkOut(nodoArbol*arbol);
+void checkOut(nodoArbol*arbol,FilaLimpieza* filin);
 void persistenciaCliente(nodoArbol*nodo,char nombreArchivo[100]);
 void muestraArcivo(char nombreArchivo[100]);
 nodoArbol*despersistenciaClientesActuales(nodoArbol*arbol);
