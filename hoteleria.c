@@ -1,5 +1,5 @@
 #include "hoteleria.h"
-
+#include "filalimpieza.h"
 void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
 {
     nodoLista*nuevosClientes=inicListaCliente();
