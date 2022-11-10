@@ -70,15 +70,17 @@
 1666870767 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\lista.c
 	"lista.h"
 
-1667916714 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
+1668079741 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
+	"filalimpieza.h"
 
-1667916714 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
+1668079741 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"filalimpieza.h"
 
 1667315534 0e2716feb7244cb79fac347e0498af2792acc
 	"arbolHabitaciones.h"
@@ -87,7 +89,7 @@
 	<stdlib.h>
 	<string.h>
 
-1667916714 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
+1668080296 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -141,10 +143,10 @@
 	<stdbool.h>
 	<time.h>
 
-1667916714 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\filalimpieza.c
+1668079741 source:c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\filalimpieza.c
 	"filalimpieza.h"
 
-1667916714 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\filalimpieza.h
+1668079741 c:\users\jpbus\desktop\facultad\programacion 2\tpprogra2\filalimpieza.h
 	"arbolHabitaciones.h"
 	<stdio.h>
 	<stdlib.h>

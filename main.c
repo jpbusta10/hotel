@@ -25,7 +25,7 @@ int main()
         printf("3.mostrar clientes hospedados\n");
         printf("4.mostrar base de clientes\n");
         printf("5.ver habitaciones sucias\n");
-        printf("6.limpiar una habitacion\n");
+        printf("6.Buscar Habitacion\n");
         printf("7.archvo sucias\n");
         printf("9.salir\n");
         scanf("%i",&option);
