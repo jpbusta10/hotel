@@ -11,6 +11,7 @@ int main()
     inicFila(&filin);
     srand(time(NULL));
     bool seguir = true;
+    bool menuLimpieza = true;
     nodoArbol*arbol=inicArbol();
     nodoArbol*auxiliar;///auxiliar para buscar habitacion
     int habitacionesHotel=200;
@@ -26,7 +27,7 @@ int main()
         printf("4.mostrar base de clientes\n");
         printf("5.ver habitaciones sucias\n");
         printf("6.Buscar Habitacion\n");
-        printf("7.archvo sucias\n");
+        printf("7.Menu limpieza\n");
         printf("9.salir\n");
         scanf("%i",&option);
         system("cls");
@@ -61,9 +62,29 @@ int main()
                 system("cls");
                 break;
             case 7:
-                cargarFilaAuto(&filin);
-                mostrarArchivoSucias();
-                system("pause");
+                menuLimpieza = true;
+                while(menuLimpieza)
+                {
+                    system("cls");
+                    printf("1.limpiar una habitacion\n");
+                    printf("2.ver habitaciones sucias\n");
+                    printf("3.ver base de datos limpieza\n");
+                    printf("4.volver al menu principal\n");
+                    option = 0;
+                    scanf("%i",&option);
+
+                    switch(option)
+                    {
+                    case 1:
+
+                        limpiarHabitacion(&filin,arbol);
+                        system("pause");
+                        break;
+                    case 4:
+                        menuLimpieza=false;
+                        break;
+                    }
+                }
                 system("cls");
                 break;
             case 9:

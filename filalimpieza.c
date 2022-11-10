@@ -283,7 +283,6 @@ void cargarFilaAuto(FilaLimpieza* filin)
         numerohabitacion=rand()%100+1;
         aux.estadoHabitacion=1;
         aux.numeroHabitacion=numerohabitacion;
-        puts("el problema es lo de abajo");
         AgregarFila(filin,aux);
         i++;
     }
