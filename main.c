@@ -76,10 +76,18 @@ int main()
                     switch(option)
                     {
                     case 1:
-
                         limpiarHabitacion(&filin,arbol);
                         system("pause");
                         break;
+                    case 2:
+                        mostrarArchivolimpieza();
+                        system("pause");
+                        system("cls");
+                        break;
+                    case 3:
+                        mostrarBDL(archivolimpieza);
+                        system("pause");
+                        system("cls");
                     case 4:
                         menuLimpieza=false;
                         break;
