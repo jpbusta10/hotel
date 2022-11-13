@@ -83,13 +83,13 @@ void AgregarFila(FilaLimpieza*filin,Limpieza dato)
         filin->cabecera=agregarFinalLimpieza(filin->cabecera,nuevo);
         filin->ultimo=nuevo;
     }
-    BaseDatosLimpieza aux;
-    aux.bajaLogica=1;
-    aux.numeroHabitacion=dato.numeroHabitacion;
+    BaseDatosLimpieza aGuardar;
+    aGuardar.bajaLogica=1;
+    aGuardar.numeroHabitacion=dato.numeroHabitacion;
     char aux2[20];
     empleadosLimpiezaRandom(aux2);
-    strcpy(aux.nombreEmpleado,aux2);
-    persistenciaSucias(aux);
+    strcpy(aGuardar.nombreEmpleado,aux2);
+    persistenciaSucias(aGuardar);
 }
 
 void empleadosLimpiezaRandom(char* aux)
@@ -138,10 +138,20 @@ NodoLimpieza* borrarPrimero(NodoLimpieza* lista)
 
 void persistenciaSucias(BaseDatosLimpieza dato)
 {
-    FILE* archi=fopen(archivolimpieza,"ab");
+    BaseDatosLimpieza aux;
+    FILE* archi=fopen(archivolimpieza,"a+b");
+    int flag=0;
     if(archi!=NULL)
     {
-        fwrite(&dato,sizeof(BaseDatosLimpieza),1,archi);
+        while((fread(&aux,sizeof(BaseDatosLimpieza),1,archi)>0)&&(flag==0)){
+            if(aux.numeroHabitacion
+               ==dato.numeroHabitacion){
+                flag=1;
+            }
+        }
+        if(flag==0){
+            fwrite(&dato,sizeof(BaseDatosLimpieza),1,archi);
+        }
 
     }
     fclose(archi);
@@ -158,7 +168,6 @@ void mostrarArchivolimpieza()
             if(aux.bajaLogica==1){
                 puts("------------\n");
                 printf("numero habitacion: %d\n",aux.numeroHabitacion);
-                printf("nombre empleado: %s\n",aux.nombreEmpleado);
                 puts("-----------\n");
             }
         }
@@ -177,7 +186,7 @@ void mostrarBDL()
             if(aux.bajaLogica==0){
                 puts("------------\n");
                 printf("numero habitacion: %d\n",aux.numeroHabitacion);
-                printf("nombre empleado: %s\n",aux.nombreEmpleado);
+                printf("empleado: %s\n",aux.nombreEmpleado);
                 puts("-----------\n");
             }
         }
@@ -197,7 +206,6 @@ void limpiarHabitacion(FilaLimpieza* filin,nodoArbol* arbol)
         if(filin->cabecera!=NULL)
         {
             extraido=extraer(filin);
-            printf("extraido %i\n",extraido.numeroHabitacion);
             comodin=buscarPorHabitacion(arbol,extraido.numeroHabitacion);
             comodin->estado.estadoLimpieza=0;
             while((flag==0)&&(fread(&auxiliar,sizeof(BaseDatosLimpieza),1,archi)>0)){
@@ -213,15 +221,13 @@ void limpiarHabitacion(FilaLimpieza* filin,nodoArbol* arbol)
             printf("nombre empleado: %s\n",auxiliar.nombreEmpleado);
             puts("-----------\n");
             fwrite(&auxiliar,sizeof(BaseDatosLimpieza),1,archi);
+
         }else{
         printf("no hay habitaciones sucias\n");
         }
     fclose(archi);
     }
 }
-
-
-
 
 void cargarFilaAuto(FilaLimpieza* filin)
 {
@@ -237,4 +243,27 @@ void cargarFilaAuto(FilaLimpieza* filin)
         i++;
     }
 
+}
+
+NodoLimpieza* despersistenciaLimpieza(NodoLimpieza* nodin){
+    FILE* archi=fopen(archivolimpieza,"rb");
+    BaseDatosLimpieza aux;
+    if(archi!=NULL){
+        while(fread(&aux,sizeof(BaseDatosLimpieza),1,archi)>0){
+            Limpieza aux2;
+            aux2.estadoHabitacion=aux.bajaLogica;
+            aux2.numeroHabitacion=aux.numeroHabitacion;
+            NodoLimpieza* auxiliar=crearNodoLimpieza(aux2);
+            nodin=agregarPrincipioLimpieza(nodin,auxiliar);
+        }
+    }
+    fclose(archi);
+   return nodin;
+}
+
+void pasarListaAFila(FilaLimpieza* filin,NodoLimpieza* nodin){
+    while(nodin!=NULL){
+        AgregarFila(filin,nodin->dato);
+        nodin=nodin->siguiente;
+    }
 }

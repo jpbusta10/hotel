@@ -126,7 +126,7 @@
 1668211178 source:c:\users\admin\desktop\tp-progra2\lista.c
 	"lista.h"
 
-1668292241 source:c:\users\admin\desktop\tp-progra2\main.c
+1668380838 source:c:\users\admin\desktop\tp-progra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -135,10 +135,10 @@
 	"filalimpieza.h"
 	<stdbool.h>
 
-1668292331 source:c:\users\admin\desktop\tp-progra2\filalimpieza.c
+1668380387 source:c:\users\admin\desktop\tp-progra2\filalimpieza.c
 	"filalimpieza.h"
 
-1668292331 c:\users\admin\desktop\tp-progra2\filalimpieza.h
+1668381070 c:\users\admin\desktop\tp-progra2\filalimpieza.h
 	"arbolHabitaciones.h"
 	<stdio.h>
 	<stdlib.h>
