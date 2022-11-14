@@ -85,7 +85,7 @@ int main()
                         system("cls");
                         break;
                     case 3:
-                        mostrarBDL(archivolimpieza);
+                        mostrarBDL();
                         system("pause");
                         system("cls");
                     case 4:
