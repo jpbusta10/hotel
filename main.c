@@ -63,6 +63,9 @@ int main()
                 break;
             case 7:
                 menuLimpieza = true;
+                NodoLimpieza* auxiliar2=inicListaLimpieza();
+                auxiliar2=despersistenciaLimpieza(auxiliar2);
+                pasarListaAFila(&filin,auxiliar2);
                 while(menuLimpieza)
                 {
                     system("cls");
