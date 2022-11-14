@@ -7,7 +7,7 @@
 	<stdlib.h>
 	<string.h>
 
-1668376625 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
+1668462041 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -34,7 +34,7 @@
 
 1666870767 D
 
-1668376625 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
+1668461537 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\hoteleria.c
 	"hoteleria.h"
 	"filalimpieza.h"
 
@@ -204,10 +204,10 @@
 1668004468 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\filalimpieza.c
 	"filalimpieza.h"
 
-1668376625 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\filalimpieza.c
+1668460650 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\filalimpieza.c
 	"filalimpieza.h"
 
-1668376625 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\filalimpieza.h
+1668460650 c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\filalimpieza.h
 	"arbolHabitaciones.h"
 	<stdio.h>
 	<stdlib.h>
