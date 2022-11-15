@@ -111,3 +111,12 @@ nodoLista*buscarNodo(nodoLista*lista,char nombre[50])
     return buscado;
 
 }
+
+nodoLista* eliminarPri(nodoLista* lista){
+    nodoLista* aBorrar=lista;
+    if(lista!=NULL){
+        lista=lista->siguiente;
+        free(aBorrar);
+    }
+    return lista;
+}
