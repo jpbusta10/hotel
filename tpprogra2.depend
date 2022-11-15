@@ -161,7 +161,7 @@
 1668506509 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1668506509 c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.h
+1668510800 c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -171,7 +171,7 @@
 	<stdlib.h>
 	<string.h>
 
-1668506509 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.c
+1668510529 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.c
 	"lista.h"
 
 1668510216 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.c
