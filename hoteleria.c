@@ -322,3 +322,4 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
     }
 
 }
+
