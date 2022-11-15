@@ -40,4 +40,5 @@ int buscarNodoHabitacion(nodoListaBase*lista,int habitacion);
 nodoListaBase*borramosListaHab(nodoListaBase*lista,int habitacion);
 void menuEstadisticas(nodoArbol*);
 void menuLimpieza(FilaLimpieza*,nodoArbol*);
+void Menu();
 #endif // HOTELERIA_H_INCLUDED

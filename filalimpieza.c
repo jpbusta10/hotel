@@ -270,6 +270,7 @@ void pasarListaAFila(FilaLimpieza* filin,NodoLimpieza* nodin){
 }
 
 void limpiezaPorEmpleado(){
+    char b=219,a=177;
     NodoLimpieza* auxiliar2=inicListaLimpieza();
     auxiliar2=despersistenciaLimpieza(auxiliar2);
     int contador=0;
@@ -295,8 +296,45 @@ void limpiezaPorEmpleado(){
     porcentajeneli=((float)neli/(float)contador)*100;
     porcentajepedro=((float)pedro/(float)contador)*100;
     porcentajepatri=((float)patri/(float)contador)*100;
-    printf(" Patri: %.2f %% \ncantidad de habitaciones limpiadas: %i\n",porcentajepatri,patri);
-    printf(" Pedro: %.2f %% \ncantidad de habitaciones limpiadas: %i\n",porcentajepedro,pedro);
-    printf(" Nelida: %.2f %% \ncantidad de habitaciones limpiadas: %i\n",porcentajeneli,neli);
+    printf("\nPatri: %.2f %%",porcentajepatri);
+    printf("\r");
+    printf("\t\t\t");
+    for (int i = 0; i < contador; i++) {
+        printf("%c", a);
+    }
+    printf("\r");
+    printf("\t\t\t");
+    for (int i = 0; i < patri; i++) {
+        printf("%c", b);
+
+    }
+    printf("\ncantidad de habitaciones limpiadas: %i\n",patri);
+    printf("\nPedro: %.2f %%",porcentajepedro);
+    printf("\r");
+    printf("\t\t\t");
+    for (int i = 0; i < contador; i++) {
+        printf("%c", a);
+    }
+    printf("\r");
+    printf("\t\t\t");
+    for (int i = 0; i < pedro; i++) {
+        printf("%c", b);
+
+    }
+    printf("\ncantidad de habitaciones limpiadas: %i\n",pedro);
+    printf("\nNelida: %.2f %% ",porcentajeneli);
+     printf("\r");
+    printf("\t\t\t");
+    for (int i = 0; i < contador; i++) {
+        printf("%c", a);
+    }
+    printf("\r");
+    printf("\t\t\t");
+    for (int i = 0; i < neli; i++) {
+        printf("%c", b);
+
+    }
+    printf("\ncantidad de habitaciones limpiadas: %i\n",neli);
+    printf("\n");
     system("pause");
 }
