@@ -7,11 +7,11 @@
 #include <stdbool.h>
 int main()
 {
+    /*
     FilaLimpieza filin;
     inicFila(&filin);
     srand(time(NULL));
     bool seguir = true;
-    bool menuLimpieza = true;
     nodoArbol*arbol=inicArbol();
     nodoArbol*auxiliar;///auxiliar para buscar habitacion
     int habitacionesHotel=200;
@@ -65,40 +65,7 @@ int main()
                 system("cls");
                 break;
             case 7:
-                menuLimpieza = true;
-                NodoLimpieza* auxiliar2=inicListaLimpieza();
-                auxiliar2=despersistenciaLimpieza(auxiliar2);
-                pasarListaAFila(&filin,auxiliar2);
-                while(menuLimpieza)
-                {
-                    system("cls");
-                    printf("1.limpiar una habitacion\n");
-                    printf("2.ver habitaciones sucias\n");
-                    printf("3.ver base de datos limpieza\n");
-                    printf("4.volver al menu principal\n");
-                    option = 0;
-                    scanf("%i",&option);
-
-                    switch(option)
-                    {
-                    case 1:
-                        limpiarHabitacion(&filin,arbol);
-                        system("pause");
-                        break;
-                    case 2:
-                        mostrarArchivolimpieza();
-                        system("pause");
-                        system("cls");
-                        break;
-                    case 3:
-                        mostrarBDL();
-                        system("pause");
-                        system("cls");
-                    case 4:
-                        menuLimpieza=false;
-                        break;
-                    }
-                }
+                menuLimpieza(&filin,arbol);
                 system("cls");
                 break;
             case 9:
@@ -108,7 +75,7 @@ int main()
 
         }
     }
-
-
+*/
+    Menu();
     return 0;
 }

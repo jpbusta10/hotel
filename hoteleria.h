@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #define historial "historialClientes.bin"
 #define clientesActuales "clienteshospedados.bin"
 #include "filalimpieza.h"
@@ -38,4 +39,5 @@ void borrarDeHospedados(int habitacion);///borra del archivo de hospedadosActual
 int buscarNodoHabitacion(nodoListaBase*lista,int habitacion);
 nodoListaBase*borramosListaHab(nodoListaBase*lista,int habitacion);
 void menuEstadisticas(nodoArbol*);
+void menuLimpieza(FilaLimpieza*,nodoArbol*);
 #endif // HOTELERIA_H_INCLUDED
