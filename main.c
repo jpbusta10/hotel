@@ -12,6 +12,7 @@ int main()
     srand(time(NULL));
     bool seguir = true;
     bool menuLimpieza = true;
+    bool menuEstadisticas = true;
     nodoArbol*arbol=inicArbol();
     nodoArbol*auxiliar;///auxiliar para buscar habitacion
     int habitacionesHotel=200;
@@ -25,7 +26,7 @@ int main()
         printf("2.realizar un check Out\n");
         printf("3.mostrar clientes hospedados\n");
         printf("4.mostrar base de clientes\n");
-        printf("5.estadisticas");
+        printf("5.estadisticas\n");
         printf("6.Buscar Habitacion\n");
         printf("7.Menu limpieza\n");
         printf("9.salir\n");
@@ -52,6 +53,29 @@ int main()
                 system("pause");
                 system("cls");
                 break;
+            case 5:
+                menuEstadisticas = true;
+                while(menuEstadisticas)
+                {
+                    float promedio=0;
+                    printf("1.promedio de pasajeros por habitacion\n");
+                    printf("2.ocupacion\n");
+                    printf("9.volver al menu principal\n");
+                    scanf("%i",&option);
+
+                    switch(option)
+                    {
+                    case 1:
+                        promedio = pasajerosPorHabitacion(arbol);
+                        printf("promedio pasajeros por habitacion: %.2f\n",promedio);
+                        system("pause");
+                        system("cls");
+                    case 9:
+                        menuEstadisticas = false;
+                        system("pause");
+                        system("cls");
+                    }
+                }
             case 6:
                 printf("ingrese la habitacion que desea buscar..\n");
                 scanf("%i",&aux);

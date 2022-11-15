@@ -19,6 +19,11 @@ typedef struct
     struct nodoArbol*izquierda;
     struct nodoArbol*derecha;
 } nodoArbol;
+typedef struct
+{
+    int dato;
+    struct nodoListaInt*siguiente;
+}nodoListaInt;
 ///prototipado
 
 nodoArbol*inicArbol();

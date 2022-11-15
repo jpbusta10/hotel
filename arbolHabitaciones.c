@@ -154,5 +154,62 @@ void muestraArbolOcupados(nodoArbol*arbol)
 
     }
 }
+nodoListaInt*inicListaInt()
+{
+    return NULL;
+}
+nodoListaInt*crearNodoListaInt(int dato)
+{
+    nodoListaInt*nuevoNodo = (nodoListaInt*)malloc(sizeof(nodoListaInt));
+    nuevoNodo->dato=dato;
+    nuevoNodo->siguiente=NULL;
+    return nuevoNodo;
+}
+nodoListaInt*agregarPrincipioListaInt(nodoListaInt*lista, int dato)
+{
+    nodoListaInt*nuevoNodo = crearNodoListaInt(dato);
+    if(lista==NULL)
+    {
+        lista = nuevoNodo;
+    }
+    else
+    {
+        nuevoNodo->siguiente=lista;
+        lista=nuevoNodo;
+    }
+    return lista;
+}
+float pasajerosPorHabitacion(nodoArbol*arbol)///retorna el promedio de pasajeros por habitacion
+{
+    nodoListaInt*pasajerosPHab = inicListaInt();///cantidad de pasajeros por habitacion
+    float habitacionesOcupadas = 0;
+    int cantidadPasajeros;
+    int acumulador=0;
+    float promedio;
+    nodoLista*seguidora;
+    if(arbol!=NULL)
+    {
+        if(arbol->estado.condicion==1)
+        {
+            habitacionesOcupadas++;
+            arbol->estado.Listacliente=seguidora;
+            while(seguidora!=NULL)
+            {
+                seguidora=seguidora->siguiente;
+                cantidadPasajeros++;
+            }
+            pasajerosPHab=agregarPrincipioListaInt(pasajerosPHab,cantidadPasajeros);
+            cantidadPasajeros=0;
+        }
+        pasajerosPorHabitacion(arbol->izquierda);
+        pasajerosPorHabitacion(arbol->izquierda);
+    }
 
-
+    while(pasajerosPHab!=NULL)
+    {
+        acumulador=acumulador=pasajerosPHab->dato;
+        pasajerosPHab = pasajerosPHab->siguiente;
+    }
+    promedio = acumulador / habitacionesOcupadas;
+    return promedio;
+}
