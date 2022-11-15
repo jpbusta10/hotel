@@ -155,4 +155,34 @@ void muestraArbolOcupados(nodoArbol*arbol)
     }
 }
 
+int recuentoPasajeros(nodoArbol*nodo)
+{
+    nodoLista*seguidora;
+    int cantidadPasajeros=0;
+    seguidora=nodo->estado.Listacliente;
+    while(seguidora!=NULL)
+    {
+        cantidadPasajeros++;
+        seguidora=seguidora->siguiente;
+    }
+    return cantidadPasajeros;
+}
 
+void pasajerosPorHabitacion(nodoArbol*arbol,int*acumulador,int* habitacionesOcupadas)///retorna me da la sumatoria de pasajeros por hab y hab ocupadas
+{
+    int cantidadPasajeros=0;
+    if(arbol!=NULL)
+    {
+        if(arbol->estado.condicion==1)
+        {
+            (*habitacionesOcupadas)++;
+            cantidadPasajeros = recuentoPasajeros(arbol);
+
+            (*acumulador) = (*acumulador) + cantidadPasajeros;
+
+        }
+        pasajerosPorHabitacion(arbol->izquierda,acumulador,habitacionesOcupadas);
+        pasajerosPorHabitacion(arbol->derecha,acumulador,habitacionesOcupadas);
+    }
+
+}

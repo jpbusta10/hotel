@@ -28,23 +28,23 @@ typedef struct{
     int numeroHabitacion;
 }BaseDatosLimpieza;
 
-void muestraArbolSucias(nodoArbol*);
 void mostrarListaLimpieza(NodoLimpieza*);
 void mostrarNodoLimpieza(NodoLimpieza*);
 NodoLimpieza* agregarPrincipioLimpieza(NodoLimpieza*,NodoLimpieza*);
 NodoLimpieza* crearNodoLimpieza(Limpieza);
 NodoLimpieza* agregarFinalLimpieza(NodoLimpieza*,NodoLimpieza*);
 NodoLimpieza* borrarPrimero(NodoLimpieza* lista);
-NodoLimpieza* extraer(FilaLimpieza*);
+Limpieza extraer(FilaLimpieza*);
 void AgregarFila(FilaLimpieza*,Limpieza);
 void inicFila(FilaLimpieza*);
-nodoArbol* buscarSucia(nodoArbol*);
-void pasarArbolToFila(FilaLimpieza*,nodoArbol*);
 void persistenciaSucias(BaseDatosLimpieza);
 void levantarArchivo(FilaLimpieza*);
 void limpiarHabitacion(FilaLimpieza*,nodoArbol*);
-void mostrarArchivoSucias();
+void mostrarArchivolimpieza();
 NodoLimpieza* inicListaLimpieza();
 void cargarFilaAuto(FilaLimpieza* filin);
 void empleadosLimpiezaRandom(char*);
+void mostrarBDL();
+NodoLimpieza* despersistenciaLimpieza(NodoLimpieza*);
+void pasarListaAFila(FilaLimpieza*,NodoLimpieza*);
 #endif // FILALIMPIEZA_H_INCLUDED

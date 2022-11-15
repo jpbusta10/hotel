@@ -6,7 +6,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     cliente nuevoCliente;
     int cantidadClientes=0;///guardamos la cantidad de clientes
     char continuar;
-    int cantHabitaciones=0;
+    int cantHabitaciones=100;
     int huespedesEnHabitacion=0;
     char auxiliar[50];
     nodoArbol*hab;
@@ -25,12 +25,14 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     system("cls");
 
     printf("\ncuantas habitaciones desea?\n");
-    scanf("%i",&cantHabitaciones);
-    if(cantHabitaciones>cantidadClientes)
+    while(cantHabitaciones>cantidadClientes)
     {
-        printf("no puede elegir tantas habitaciones\n");
+        scanf("%i",&cantHabitaciones);
+        if(cantHabitaciones>cantidadClientes)
+        {
+            printf("no puede ingresar tantas habitacion. \nTrate de nuevo\n");
+        }
     }
-
     system("cls");
     for(int i=0; i<cantHabitaciones; i++) ///iteramos hasta que se tengan todas las habitaciones requeridas
     {
@@ -285,3 +287,4 @@ void borrarDeHospedados(int habitacion)///borra del archivo de hospedadosActuale
     }
 
 }
+
