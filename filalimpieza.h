@@ -8,6 +8,7 @@
 #include <time.h>
 
 typedef struct{
+    char nombreEmpleado[20];
     int estadoHabitacion;
     int numeroHabitacion;
 }Limpieza;
@@ -47,4 +48,5 @@ void empleadosLimpiezaRandom(char*);
 void mostrarBDL();
 NodoLimpieza* despersistenciaLimpieza(NodoLimpieza*);
 void pasarListaAFila(FilaLimpieza*,NodoLimpieza*);
+void limpiezaPorEmpleado();
 #endif // FILALIMPIEZA_H_INCLUDED

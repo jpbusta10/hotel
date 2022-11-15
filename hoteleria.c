@@ -30,7 +30,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
         scanf("%i",&cantHabitaciones);
         if(cantHabitaciones>cantidadClientes)
         {
-            printf("no puede ingresar tantas habitacion. \nTrate de nuevo\n");
+            printf("No puede ingresar tantas habitaciones. \n Intente de nuevo\n");
         }
     }
     system("cls");
@@ -53,7 +53,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
                     printf("cuantos huespedes en la habitacion?\n");
                     scanf("%i",&huespedesEnHabitacion);
                     if(huespedesEnHabitacion>6){
-                            printf("no se puede ingresar esa cantidad, intente de nuevo\n");
+                            printf("No se puede ingresar esa cantidad. \n Intente de nuevo\n");
                             system("pause");
                             system("cls");
                         continuar='s';
@@ -334,8 +334,10 @@ void menuEstadisticas(nodoArbol* arbol){
         float ocupacion=0;
         printf("1.promedio de pasajeros por habitacion\n");
         printf("2.ocupacion\n");
+        printf("3.limpieza por empleado\n");
         printf("9.volver al menu principal\n");
         scanf("%i",&option);
+        system("cls");
         switch(option)
                     {
                     case 1:
@@ -352,12 +354,119 @@ void menuEstadisticas(nodoArbol* arbol){
                         system("pause");
                         system("cls");
                         break;
-
+                    case 3:
+                        limpiezaPorEmpleado();
+                        system("cls");
+                        break;
                     case 9:
                         continuar = false;
                         system("pause");
                         system("cls");
                         break;
                     }
+    }
+}
+
+void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
+    bool continuar = true;
+    int option;
+    NodoLimpieza* auxiliar2=inicListaLimpieza();
+    auxiliar2=despersistenciaLimpieza(auxiliar2);
+    pasarListaAFila(filin,auxiliar2);
+    while(continuar){
+        printf("1.limpiar una habitacion\n");
+        printf("2.ver habitaciones sucias\n");
+        printf("3.ver base de datos limpieza\n");
+        printf("4.volver al menu principal\n");
+        scanf("%i",&option);
+        switch(option)
+        {
+            case 1:
+                limpiarHabitacion(&filin,arbol);
+                system("pause");
+                break;
+            case 2:
+                mostrarArchivolimpieza();
+                system("pause");
+                system("cls");
+                break;
+            case 3:
+                mostrarBDL();
+                system("pause");
+                system("cls");
+            case 4:
+                continuar=false;
+                break;
+        }
+    }
+}
+
+void Menu(){
+    FilaLimpieza filin;
+    inicFila(&filin);
+    srand(time(NULL));
+    bool seguir = true;
+    nodoArbol*arbol=inicArbol();
+    nodoArbol*auxiliar;///auxiliar para buscar habitacion
+    int habitacionesHotel=200;
+    arbol=habitaciones(arbol,habitacionesHotel);
+    arbol=despersistenciaClientesActuales(arbol);
+    int option=0;
+    int aux=0;
+    while(seguir==true)
+    {
+        printf("1.realizar un check In\n");
+        printf("2.realizar un check Out\n");
+        printf("3.mostrar clientes hospedados\n");
+        printf("4.mostrar base de clientes\n");
+        printf("5.estadisticas\n");
+        printf("6.Buscar Habitacion\n");
+        printf("7.Menu limpieza\n");
+        printf("9.salir\n");
+        scanf("%i",&option);
+        system("cls");
+        switch(option)
+        {
+            case 1:
+                checkIn(arbol);
+                system("cls");
+                break;
+            case 2:
+                checkOut(arbol,&filin);
+                system("pause");
+                system("cls");
+                break;
+            case 3:
+                muestraArbolOcupados(arbol);
+                system("pause");
+                system("cls");
+                break;
+            case 4:
+                muestraArcivo(historial);
+                system("pause");
+                system("cls");
+                break;
+            case 5:
+                menuEstadisticas(arbol);
+                system("cls");
+                break;
+            case 6:
+                printf("ingrese la habitacion que desea buscar..\n");
+                scanf("%i",&aux);
+                auxiliar=buscarPorHabitacion(arbol,aux);
+                mostrarNodoArbol(auxiliar);
+                system("pause");
+                system("cls");
+                break;
+            case 7:
+                menuLimpieza(&filin,arbol);
+                system("cls");
+                break;
+            case 9:
+
+                seguir=false;
+                break;
+
+        }
     }
 }

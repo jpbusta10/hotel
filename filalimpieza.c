@@ -86,9 +86,10 @@ void AgregarFila(FilaLimpieza*filin,Limpieza dato)
     BaseDatosLimpieza aGuardar;
     aGuardar.bajaLogica=1;
     aGuardar.numeroHabitacion=dato.numeroHabitacion;
-    char aux2[20];
-    empleadosLimpiezaRandom(aux2);
-    strcpy(aGuardar.nombreEmpleado,aux2);
+    if(dato.nombreEmpleado=='\0'){
+        empleadosLimpiezaRandom(dato.nombreEmpleado);
+    }
+    strcpy(aGuardar.nombreEmpleado,dato.nombreEmpleado);
     persistenciaSucias(aGuardar);
 }
 
@@ -144,8 +145,7 @@ void persistenciaSucias(BaseDatosLimpieza dato)
     if(archi!=NULL)
     {
         while((fread(&aux,sizeof(BaseDatosLimpieza),1,archi)>0)&&(flag==0)){
-            if(aux.numeroHabitacion
-               ==dato.numeroHabitacion){
+            if(aux.numeroHabitacion==dato.numeroHabitacion){
                 flag=1;
             }
         }
@@ -253,6 +253,7 @@ NodoLimpieza* despersistenciaLimpieza(NodoLimpieza* nodin){
             Limpieza aux2;
             aux2.estadoHabitacion=aux.bajaLogica;
             aux2.numeroHabitacion=aux.numeroHabitacion;
+            strcpy(aux2.nombreEmpleado,aux.nombreEmpleado);
             NodoLimpieza* auxiliar=crearNodoLimpieza(aux2);
             nodin=agregarPrincipioLimpieza(nodin,auxiliar);
         }
@@ -266,4 +267,36 @@ void pasarListaAFila(FilaLimpieza* filin,NodoLimpieza* nodin){
         AgregarFila(filin,nodin->dato);
         nodin=nodin->siguiente;
     }
+}
+
+void limpiezaPorEmpleado(){
+    NodoLimpieza* auxiliar2=inicListaLimpieza();
+    auxiliar2=despersistenciaLimpieza(auxiliar2);
+    int contador=0;
+    int patri=0,pedro=0,neli=0;
+    if(auxiliar2!=NULL){
+            while(auxiliar2!=NULL){
+                if(auxiliar2->dato.estadoHabitacion==0){
+                    contador++;
+                    if(strcmp(auxiliar2->dato.nombreEmpleado,"Patricia")==0){
+                        patri++;
+                    }else if(strcmp(auxiliar2->dato.nombreEmpleado,"Nelida")==0){
+                        neli++;
+                    }else{
+                        pedro++;
+                    }
+                    auxiliar2=borrarPrimero(auxiliar2);
+                }else{
+                    auxiliar2=borrarPrimero(auxiliar2);
+                }
+            }
+    }
+    float porcentajepatri,porcentajepedro,porcentajeneli;
+    porcentajeneli=((float)neli/(float)contador)*100;
+    porcentajepedro=((float)pedro/(float)contador)*100;
+    porcentajepatri=((float)patri/(float)contador)*100;
+    printf(" Patri: %.2f %% \ncantidad de habitaciones limpiadas: %i\n",porcentajepatri,patri);
+    printf(" Pedro: %.2f %% \ncantidad de habitaciones limpiadas: %i\n",porcentajepedro,pedro);
+    printf(" Nelida: %.2f %% \ncantidad de habitaciones limpiadas: %i\n",porcentajeneli,neli);
+    system("pause");
 }
