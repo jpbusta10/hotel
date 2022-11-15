@@ -52,7 +52,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
                     printf("\nhabitacion: %i\n",i+1);
                     printf("cuantos huespedes en la habitacion?\n");
                     scanf("%i",&huespedesEnHabitacion);
-                    if(huespedesEnHabitacion>6){
+                    if(huespedesEnHabitacion<=6){
                             printf("No se puede ingresar esa cantidad. \n Intente de nuevo\n");
                             system("pause");
                             system("cls");
@@ -328,6 +328,7 @@ void menuEstadisticas(nodoArbol* arbol){
     bool continuar=true;
     int option;
     while(continuar){
+        char a=177,b=219;
         float promedio=0;
         int habitacionesOcupadas=0;
         int acumulador=0;
@@ -350,7 +351,19 @@ void menuEstadisticas(nodoArbol* arbol){
                     case 2:
                         pasajerosPorHabitacion(arbol,&acumulador,&habitacionesOcupadas);
                         ocupacion = ((float)habitacionesOcupadas / (float)200)*100;
-                        printf("la ocupacion es de: %.2f %%\n",ocupacion);
+                        printf("la ocupacion es de: %.2f %%",ocupacion);
+                        printf("\r");
+                        printf("\t\t\t\t");
+                        for (int i = 0; i < habitacionesOcupadas; i++) {
+                            printf("%c", a);
+                        }
+                        printf("\r");
+                        printf("\t\t\t\t");
+                        for (int i = 0; i < (ocupacion/10); i++) {
+                            printf("%c", b);
+
+                        }
+                        printf("\n");
                         system("pause");
                         system("cls");
                         break;
@@ -360,7 +373,6 @@ void menuEstadisticas(nodoArbol* arbol){
                         break;
                     case 9:
                         continuar = false;
-                        system("pause");
                         system("cls");
                         break;
                     }
@@ -402,6 +414,7 @@ void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
 }
 
 void Menu(){
+    system("color 3f");
     FilaLimpieza filin;
     inicFila(&filin);
     srand(time(NULL));
