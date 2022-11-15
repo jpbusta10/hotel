@@ -25,7 +25,7 @@ int main()
         printf("2.realizar un check Out\n");
         printf("3.mostrar clientes hospedados\n");
         printf("4.mostrar base de clientes\n");
-        printf("5.estadisticas");
+        printf("5.estadisticas\n");
         printf("6.Buscar Habitacion\n");
         printf("7.Menu limpieza\n");
         printf("9.salir\n");
@@ -104,7 +104,6 @@ int main()
 
         }
     }
-
 
 
     return 0;

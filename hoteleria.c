@@ -23,7 +23,7 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
     }
     while(continuar=='s'||continuar=='S');
     system("cls");
-
+    continuar='s';
     printf("\ncuantas habitaciones desea?\n");
     while(cantHabitaciones>cantidadClientes)
     {
@@ -34,48 +34,70 @@ void checkIn(nodoArbol*arbol)///realizamos check in de habitacion
         }
     }
     system("cls");
-    for(int i=0; i<cantHabitaciones; i++) ///iteramos hasta que se tengan todas las habitaciones requeridas
-    {
-        if(cantidadClientes!=cantHabitaciones){
-            printf("\nhabitacion: %i\n",i+1);
-            printf("cuantos huespedes en la habitacion?\n");
-            scanf("%i",&huespedesEnHabitacion);
-        }else{
-            huespedesEnHabitacion=1;
-        }
-        hab=buscarPorCapacidad(arbol,huespedesEnHabitacion);///asigno la habitacion de acuerdo a la capacidad que busco
+    if(cantHabitaciones==1){
+        hab=buscarPorCapacidad(arbol,huespedesEnHabitacion);
         hab->estado.condicion=1;
-        nodoLista*clientesHabitacion=inicListaCliente();
-        nodoLista*buscado=NULL;
-        if(huespedesEnHabitacion==1){
-            hab->estado.Listacliente=crearNodo(nuevosClientes->miCliente);
+        while(nuevosClientes!=NULL){
+            hab->estado.Listacliente=agregarPrincipio(hab->estado.Listacliente,nuevosClientes->miCliente);
+            persistenciaCliente(hab,clientesActuales);
             nuevosClientes=eliminarPri(nuevosClientes);
-            persistenciaCliente(hab,clientesActuales);
-            system("cls");
-            mostrarNodoArbol(hab);
-            system("pause");
-        }else{
-            for(int i=0; i<huespedesEnHabitacion; i++)///itero para cargar la cantidad que quiero en la habitacion
-            {
-                buscado=NULL;
-                while(buscado==NULL)///para seleccionar el cliente que deseo mientras este en la lista que tengo
-                {
-                    system("cls");
-                    printf("\ningrese el nombre del huesped de estos.\n");
-                    mostrarLista(nuevosClientes);
-                    fflush(stdin);
-                    gets(auxiliar);
-                    buscado=buscarNodo(nuevosClientes,auxiliar);
+        }
+        mostrarNodoArbol(hab);
+        system("pause");
+    }else{
+        for(int i=0; i<cantHabitaciones; i++) ///iteramos hasta que se tengan todas las habitaciones requeridas
+        {
+            if(cantidadClientes!=cantHabitaciones){
+                while(continuar=='s'){
+                    printf("\nhabitacion: %i\n",i+1);
+                    printf("cuantos huespedes en la habitacion?\n");
+                    scanf("%i",&huespedesEnHabitacion);
+                    if(huespedesEnHabitacion>6){
+                            printf("no se puede ingresar esa cantidad, intente de nuevo\n");
+                            system("pause");
+                            system("cls");
+                        continuar='s';
+                    }else{
+                        continuar='n';
+                    }
                 }
-                clientesHabitacion=agregarPrincipio(clientesHabitacion,buscado->miCliente);
-                nuevosClientes=borrarNodo(nuevosClientes,buscado->miCliente.nombre);
-
+            }else{
+                huespedesEnHabitacion=1;
             }
-            hab->estado.Listacliente=clientesHabitacion;///agrego la lista de clientes a la de la habitacion
-            persistenciaCliente(hab,clientesActuales);
-            system("cls");
-            mostrarNodoArbol(hab);
-            system("pause");
+            hab=buscarPorCapacidad(arbol,huespedesEnHabitacion);///asigno la habitacion de acuerdo a la capacidad que busco
+            hab->estado.condicion=1;
+            nodoLista*clientesHabitacion=inicListaCliente();
+            nodoLista*buscado=NULL;
+            if(huespedesEnHabitacion==1){
+                hab->estado.Listacliente=crearNodo(nuevosClientes->miCliente);
+                nuevosClientes=eliminarPri(nuevosClientes);
+                persistenciaCliente(hab,clientesActuales);
+                system("cls");
+                mostrarNodoArbol(hab);
+                system("pause");
+            }else{
+                for(int i=0; i<huespedesEnHabitacion; i++)///itero para cargar la cantidad que quiero en la habitacion
+                {
+                    buscado=NULL;
+                    while(buscado==NULL)///para seleccionar el cliente que deseo mientras este en la lista que tengo
+                    {
+                        system("cls");
+                        printf("\ningrese el nombre del huesped de estos.\n");
+                        mostrarLista(nuevosClientes);
+                        fflush(stdin);
+                        gets(auxiliar);
+                        buscado=buscarNodo(nuevosClientes,auxiliar);
+                    }
+                    clientesHabitacion=agregarPrincipio(clientesHabitacion,buscado->miCliente);
+                    nuevosClientes=borrarNodo(nuevosClientes,buscado->miCliente.nombre);
+
+                }
+                hab->estado.Listacliente=clientesHabitacion;///agrego la lista de clientes a la de la habitacion
+                persistenciaCliente(hab,clientesActuales);
+                system("cls");
+                mostrarNodoArbol(hab);
+                system("pause");
+            }
         }
     }
 }

@@ -158,26 +158,27 @@
 	<stdbool.h>
 	<time.h>
 
-1668004468 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.c
+1668506509 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
-1668004468 c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.h
+1668506509 c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.h
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
 
-1668004468 c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.h
+1668506245 c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1668004468 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.c
+1668506509 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.c
 	"lista.h"
 
-1668004468 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.c
+1668510216 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.c
 	"hoteleria.h"
+	"filalimpieza.h"
 
-1668004468 c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.h
+1668506245 c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
@@ -185,14 +186,14 @@
 	<string.h>
 	"filalimpieza.h"
 
-1668007083 c:\users\usuario\desktop\nueva carpeta\tp-progra2\filalimpieza.h
+1668506245 c:\users\usuario\desktop\nueva carpeta\tp-progra2\filalimpieza.h
 	"arbolHabitaciones.h"
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	<time.h>
 
-1668004720 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\main.c
+1668509750 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -201,7 +202,7 @@
 	"filalimpieza.h"
 	<stdbool.h>
 
-1668004468 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\filalimpieza.c
+1668506245 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\filalimpieza.c
 	"filalimpieza.h"
 
 1668460650 source:c:\users\juan pablo\onedrive\escritorio\facultad\progra 2\tpprogra2\filalimpieza.c
