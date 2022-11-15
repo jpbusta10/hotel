@@ -12,7 +12,6 @@ int main()
     srand(time(NULL));
     bool seguir = true;
     bool menuLimpieza = true;
-    bool menuEstadisticas = true;
     nodoArbol*arbol=inicArbol();
     nodoArbol*auxiliar;///auxiliar para buscar habitacion
     int habitacionesHotel=200;
@@ -54,43 +53,7 @@ int main()
                 system("cls");
                 break;
             case 5:
-                menuEstadisticas = true;
-                while(menuEstadisticas)
-                {
-                    float promedio=0;
-                    int habitacionesOcupadas=0;
-                    int acumulador=0;
-                    float ocupacion=0;
-                    printf("1.promedio de pasajeros por habitacion\n");
-                    printf("2.ocupacion\n");
-                    printf("9.volver al menu principal\n");
-                    scanf("%i",&option);
-
-                    switch(option)
-                    {
-                    case 1:
-                        pasajerosPorHabitacion(arbol,&acumulador,&habitacionesOcupadas);
-                        promedio = (float)acumulador / (float)habitacionesOcupadas;
-                        printf("promedio pasajeros por habitacion: %.2f\n",promedio);
-                        system("pause");
-                        system("cls");
-                        break;
-                    case 2:
-                        pasajerosPorHabitacion(arbol,&acumulador,&habitacionesOcupadas);
-                        ocupacion = ((float)habitacionesOcupadas / (float)habitacionesHotel)*100;
-                        printf("la ocupacion es de: %.2f %%\n",ocupacion);
-                        system("pause");
-                        system("cls");
-                        break;
-
-                    case 9:
-                        menuEstadisticas = false;
-                        system("pause");
-                        system("cls");
-                        break;
-
-                    }
-                }
+                menuEstadisticas(arbol);
                 system("cls");
                 break;
             case 6:

@@ -158,7 +158,7 @@
 	<stdbool.h>
 	<time.h>
 
-1668506509 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.c
+1668510800 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.c
 	"arbolHabitaciones.h"
 
 1668510800 c:\users\usuario\desktop\nueva carpeta\tp-progra2\arbolhabitaciones.h
@@ -171,14 +171,14 @@
 	<stdlib.h>
 	<string.h>
 
-1668510529 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.c
+1668510986 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\lista.c
 	"lista.h"
 
 1668510216 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.c
 	"hoteleria.h"
 	"filalimpieza.h"
 
-1668506245 c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.h
+1668512504 c:\users\usuario\desktop\nueva carpeta\tp-progra2\hoteleria.h
 	"arbolHabitaciones.h"
 	"lista.h"
 	<stdio.h>
@@ -193,7 +193,7 @@
 	<stdbool.h>
 	<time.h>
 
-1668509750 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\main.c
+1668512504 source:c:\users\usuario\desktop\nueva carpeta\tp-progra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
