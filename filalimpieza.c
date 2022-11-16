@@ -86,9 +86,7 @@ void AgregarFila(FilaLimpieza*filin,Limpieza dato)
     BaseDatosLimpieza aGuardar;
     aGuardar.bajaLogica=1;
     aGuardar.numeroHabitacion=dato.numeroHabitacion;
-    if(dato.nombreEmpleado=='\0'){
-        empleadosLimpiezaRandom(dato.nombreEmpleado);
-    }
+    empleadosLimpiezaRandom(dato.nombreEmpleado);
     strcpy(aGuardar.nombreEmpleado,dato.nombreEmpleado);
     persistenciaSucias(aGuardar);
 }
@@ -264,11 +262,14 @@ NodoLimpieza* despersistenciaLimpieza(NodoLimpieza* nodin){
 
 void pasarListaAFila(FilaLimpieza* filin,NodoLimpieza* nodin){
     while(nodin!=NULL){
-        AgregarFila(filin,nodin->dato);
-        nodin=nodin->siguiente;
+        if(nodin->dato.estadoHabitacion==1){
+            AgregarFila(filin,nodin->dato);
+            nodin=nodin->siguiente;
+        }else{
+            nodin=nodin->siguiente;
+        }
     }
 }
-
 void limpiezaPorEmpleado(){
     char b=219,a=177;
     NodoLimpieza* auxiliar2=inicListaLimpieza();

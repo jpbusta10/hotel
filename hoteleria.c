@@ -396,6 +396,7 @@ void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
             case 1:
                 limpiarHabitacion(filin,arbol);
                 system("pause");
+                system("cls");
                 break;
             case 2:
                 mostrarArchivolimpieza();
