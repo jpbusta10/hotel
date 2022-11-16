@@ -394,7 +394,7 @@ void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
         switch(option)
         {
             case 1:
-                limpiarHabitacion(&filin,arbol);
+                limpiarHabitacion(filin,arbol);
                 system("pause");
                 break;
             case 2:
