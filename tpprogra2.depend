@@ -114,7 +114,7 @@
 	<stdlib.h>
 	<string.h>
 
-1668624804 source:c:\users\admin\desktop\tp-progra2\hoteleria.c
+1668661902 source:c:\users\admin\desktop\tp-progra2\hoteleria.c
 	"hoteleria.h"
 	"filalimpieza.h"
 
@@ -130,7 +130,7 @@
 1668624299 source:c:\users\admin\desktop\tp-progra2\lista.c
 	"lista.h"
 
-1668624299 source:c:\users\admin\desktop\tp-progra2\main.c
+1668661785 source:c:\users\admin\desktop\tp-progra2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lista.h"
@@ -140,10 +140,10 @@
 	<stdbool.h>
 	<windows.h>
 
-1668624299 source:c:\users\admin\desktop\tp-progra2\filalimpieza.c
+1668661501 source:c:\users\admin\desktop\tp-progra2\filalimpieza.c
 	"filalimpieza.h"
 
-1668624299 c:\users\admin\desktop\tp-progra2\filalimpieza.h
+1668660899 c:\users\admin\desktop\tp-progra2\filalimpieza.h
 	"arbolHabitaciones.h"
 	<stdio.h>
 	<stdlib.h>

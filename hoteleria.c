@@ -109,7 +109,6 @@ void checkOut(nodoArbol*arbol,FilaLimpieza* filin)
     printf("habitaciones ocupada:\n");
     muestraArbolOcupados(arbol);
     Limpieza dato;
-    inicFila(&filin);
     while(habitacion==NULL)
     {
         printf("A que habitacion desea realizarle el checkout?\n");
@@ -127,7 +126,8 @@ void checkOut(nodoArbol*arbol,FilaLimpieza* filin)
         habitacion->estado.estadoLimpieza=1;
         dato.estadoHabitacion=1;
         dato.numeroHabitacion=habitacion->numeroHabitacion;
-        AgregarFila(&filin,dato);
+        empleadosLimpiezaRandom(dato.nombreEmpleado);
+        AgregarFila(filin,dato);
         mostrarNodoArbol(habitacion);
 
     }
@@ -382,14 +382,12 @@ void menuEstadisticas(nodoArbol* arbol){
 void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
     bool continuar = true;
     int option;
-    NodoLimpieza* auxiliar2=inicListaLimpieza();
-    auxiliar2=despersistenciaLimpieza(auxiliar2);
-    pasarListaAFila(filin,auxiliar2);
     while(continuar){
         printf("1.limpiar una habitacion\n");
         printf("2.ver habitaciones sucias\n");
         printf("3.ver base de datos limpieza\n");
-        printf("4.volver al menu principal\n");
+        printf("4.limpiar todas las habitaciones\n");
+        printf("5.volver al menu principal\n");
         scanf("%i",&option);
         switch(option)
         {
@@ -399,7 +397,7 @@ void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
                 system("cls");
                 break;
             case 2:
-                mostrarArchivolimpieza();
+                mostrarListaLimpieza(filin->cabecera);
                 system("pause");
                 system("cls");
                 break;
@@ -407,7 +405,13 @@ void menuLimpieza(FilaLimpieza* filin,nodoArbol* arbol){
                 mostrarBDL();
                 system("pause");
                 system("cls");
+                break;
             case 4:
+                limpiarTodas(filin,arbol);
+                system("pause");
+                system("cls");
+                break;
+            case 5:
                 continuar=false;
                 break;
         }

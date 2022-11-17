@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define archivolimpieza "ArchivoLimpieza.bin"
+#define BDL "BaseDeDatosLimpieza.bin"
 #include <stdbool.h>
 #include <time.h>
 
@@ -38,7 +39,7 @@ NodoLimpieza* borrarPrimero(NodoLimpieza* lista);
 Limpieza extraer(FilaLimpieza*);
 void AgregarFila(FilaLimpieza*,Limpieza);
 void inicFila(FilaLimpieza*);
-void persistenciaSucias(BaseDatosLimpieza);
+void persistenciaLimpias(BaseDatosLimpieza);
 void levantarArchivo(FilaLimpieza*);
 void limpiarHabitacion(FilaLimpieza*,nodoArbol*);
 void mostrarArchivolimpieza();
@@ -47,6 +48,6 @@ void cargarFilaAuto(FilaLimpieza* filin);
 void empleadosLimpiezaRandom(char*);
 void mostrarBDL();
 NodoLimpieza* despersistenciaLimpieza(NodoLimpieza*);
-void pasarListaAFila(FilaLimpieza*,NodoLimpieza*);
+void limpiarTodas(FilaLimpieza*,nodoArbol*);
 void limpiezaPorEmpleado();
 #endif // FILALIMPIEZA_H_INCLUDED
